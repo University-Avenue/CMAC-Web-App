@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CMACKWWebApplication</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header id="page-header"></header>
+    <%= javascript_pack_tag 'header/index' %>
+    <nav id="nav-menu"></nav>
+    <%= javascript_pack_tag 'navbar/index' %>
+    <main id="page-content"></main> 
+    <%= javascript_pack_tag 'index' %>
+    <%= yield %>
+  </body>
+</html>
