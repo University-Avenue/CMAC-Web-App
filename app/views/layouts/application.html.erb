@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/010d12112b.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -14,7 +15,7 @@
     <%= javascript_pack_tag 'header/index' %>
     <nav id="nav-menu"></nav>
     <%= javascript_pack_tag 'navbar/index' %>
-    <main id="page-content"></main> 
+    <main id="page-content" class="container"></main> 
     <%= javascript_pack_tag 'index' %>
     <%= yield %>
   </body>
