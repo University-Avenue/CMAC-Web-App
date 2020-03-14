@@ -17,27 +17,6 @@ $header-height: 60px;
 $footer-height: 60px;
 $nav-menu-width: 250px;
 
-// Breakpoints for screen sizes
-@mixin for-phone-only {
-  @media (min-width: 375px) { @content; }
-}
-
-@mixin for-tablet-portrait-up {
-  @media (min-width: 600px) { @content; }
-}
-
-@mixin for-tablet-landscape-up {
-  @media (min-width: 900px) { @content; }
-}
-
-@mixin for-desktop-up {
-  @media (min-width: 1200px) { @content; }
-}
-
-@mixin for-big-desktop-up {
-  @media (min-width: 1800px) { @content; }
-}
-
 body {
   box-sizing: border-box;
   padding-top: $header-height;
@@ -60,32 +39,4 @@ body {
   left: 0px;
   height: 100%;
   width: $nav-menu-width;
-}
-
-#page-content {
-  box-sizing: border-box;
-  height: 100%;
-  width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-
-  @include for-phone-only() {
-    width: 375px;
-  }
-
-  @include for-tablet-portrait-up(){
-    width: 600px;
-  }
-
-  @include for-tablet-landscape-up() {
-    width: 900px;
-  }
-
-  @include for-desktop-up() {
-    width: 1200px;
-  }
-
-  @include for-big-desktop-up() {
-    width: 1400px;
-  }
 }
