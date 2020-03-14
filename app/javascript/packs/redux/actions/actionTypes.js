@@ -1,0 +1,1 @@
+export const SHOW_NAV_MENU = 'SHOW_NAV_MENU';
