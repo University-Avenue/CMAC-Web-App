@@ -16,6 +16,10 @@
 $header-height: 60px;
 $footer-height: 60px;
 $nav-menu-width: 250px;
+$cmac-logo-height: 60px;
+$cmac-logo-width: 60px;
+$nav-menu-control-height: 60px;
+$nav-menu-control-width: 60px;
 
 body {
   box-sizing: border-box;
@@ -30,6 +34,8 @@ body {
   top: 0px;
   left: 0px;
   right: 0px;
+  display: flex;
+  justify-content: space-between;
 }
 
 #nav-menu {
@@ -39,4 +45,33 @@ body {
   left: 0px;
   height: 100%;
   width: $nav-menu-width;
+}
+
+.cmac-logo-container {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $cmac-logo-height;
+  width: $cmac-logo-width;
+  padding: 5px;
+  img {
+    width: 100%;
+    width: 100%;
+  }
+}
+
+.inner-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-menu-control-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: $nav-menu-control-height;
+  width: $nav-menu-control-width;
+  padding: 5px;
 }
