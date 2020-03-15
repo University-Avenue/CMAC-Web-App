@@ -8,6 +8,8 @@ const initialState = {
 function appComponentVisibility(state = initialState, action) {
   switch (action.type) {
     case SHOW_NAV_MENU:
+      console.log('in reducer')
+      console.log(action.show)
       return {
         ...state,
         showNavMenu: action.show,
