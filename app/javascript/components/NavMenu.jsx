@@ -1,23 +1,21 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import NavMenuList from './NavMenuList';
 
-function NavMenuComponent(props) {
-  const { show } = props;
+function NavMenu() {
+  const iconsList = [
+    ['fas fa-home', 'Home', '/'],
+    ['fas fa-fist-raised', 'Programs', '/programs'],
+    ['fas fa-user', 'Instructors', '/instructors'],
+    ['fas fa-calendar-alt', 'Schedule', '/schedule'],
+    ['fas fa-photo-video', 'Gallery', '/gallery'],
+    ['fas fa-paper-plane', 'Contact Us', '/contact'],
+  ];
 
   return (
     <>
-      { show && <h1>FFS Work</h1>}
+      <NavMenuList iconsList={iconsList} />
     </>
   );
 }
 
-NavMenuComponent.propTypes = {
-  show: PropTypes.bool.isRequired,
-};
-
-const mapStateToProps = (state) => ({
-  show: state.appComponentVisibility.showNavMenu,
-});
-
-export default connect(mapStateToProps)(NavMenuComponent);
+export default NavMenu;
