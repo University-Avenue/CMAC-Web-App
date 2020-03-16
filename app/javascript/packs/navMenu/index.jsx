@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HeaderComponent from '../../components/Header';
+import NavMenuComponent from '../../components/NavMenu';
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <HeaderComponent />,
-    document.getElementById('page-header'),
+    <NavMenuComponent />,
+    document.getElementById('nav-menu'),
   );
 });
