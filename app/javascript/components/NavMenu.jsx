@@ -8,7 +8,7 @@ function NavMenu() {
     ['fas fa-user', 'Instructors', '/instructors/index'],
     ['fas fa-calendar-alt', 'Schedule', '/schedule/index'],
     ['fas fa-photo-video', 'Gallery', '/gallery/index'],
-    ['fas fa-paper-plane', 'Contact Us', '/contact/index'],
+    ['fas fa-paper-plane', 'Contact Us', '/contact_us/index'],
   ];
 
   return (
