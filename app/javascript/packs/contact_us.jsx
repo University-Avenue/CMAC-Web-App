@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LandingPage from '../components/LandingPage';
-
+import ContactUsPage from '../components/ContactUsPage';
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <LandingPage />,
+    <ContactUsPage />,
     document.getElementById('page-content'),
   );
 });
