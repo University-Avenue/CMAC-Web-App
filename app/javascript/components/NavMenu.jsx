@@ -4,11 +4,11 @@ import NavMenuList from './NavMenuList';
 function NavMenu() {
   const iconsList = [
     ['fas fa-home', 'Home', '/'],
-    ['fas fa-fist-raised', 'Programs', '/programs/index'],
-    ['fas fa-user', 'Instructors', '/instructors/index'],
-    ['fas fa-calendar-alt', 'Schedule', '/schedule/index'],
-    ['fas fa-photo-video', 'Gallery', '/gallery/index'],
-    ['fas fa-paper-plane', 'Contact Us', '/contact_us/index'],
+    ['fas fa-fist-raised', 'Programs', '/programs'],
+    ['fas fa-user', 'Instructors', '/instructors'],
+    ['fas fa-calendar-alt', 'Schedule', '/schedule'],
+    ['fas fa-photo-video', 'Gallery', '/gallery'],
+    ['fas fa-paper-plane', 'Contact Us', '/contact_us'],
   ];
 
   return (
