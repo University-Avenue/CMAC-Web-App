@@ -19,17 +19,3 @@ require("channels")
 //= require jquery3
 //= require popper
 //= require bootstrap
-
-let navMenuIsVisible = false;
-window.onload = () => {
-  document.getElementById('nav-control').addEventListener('click', () => {
-    if (navMenuIsVisible) {
-      document.getElementById('nav-menu').style.width = '0px';
-      document.getElementById('page-content').style.marginLeft = 'auto'
-    } else {
-      document.getElementById('nav-menu').style.width = '220px';
-      document.getElementById('page-content').style.marginLeft = '220px'
-    }
-    navMenuIsVisible = !navMenuIsVisible;
-  });
-}

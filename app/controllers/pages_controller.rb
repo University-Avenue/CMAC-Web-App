@@ -1,19 +1,16 @@
 class PagesController < ApplicationController
+  def contact_us
+  end
+
   def home
   end
 
-  def programs
-  end
-
-  def instructors
+  def profile
   end
 
   def schedule
   end
 
-  def gallery
-  end
-
-  def contact_us
+  def train
   end
 end
