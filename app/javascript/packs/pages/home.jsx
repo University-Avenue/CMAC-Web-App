@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ContactUsPage from '../components/ContactUsPage';
+import HomePage from '../../components/HomePage';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
   ReactDOM.render(
-    <ContactUsPage />,
+    <HomePage />,
     document.getElementById('page-content'),
   );
 });
