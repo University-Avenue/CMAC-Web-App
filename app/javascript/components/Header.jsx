@@ -46,7 +46,7 @@ function HeaderComponent() {
               <a className="nav-link js-scroll-trigger" href="/schedule">Schedule</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link js-scroll-trigger" href="/contractus">Contact us</a>
+              <a className="nav-link js-scroll-trigger" href="/contact_us">Contact us</a>
             </li>
             <li className="nav-item">
               <a className="nav-link js-scroll-trigger" href="/profile">
