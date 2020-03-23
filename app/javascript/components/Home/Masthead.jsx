@@ -1,0 +1,36 @@
+import React from 'react';
+
+const Masthead = () => (
+  <header className="masthead">
+    <div className="container">
+      <div className="row text-center">
+        <div className="col-8 align-self-end">
+          <h1 className="font-white font-bold text-uppercase">
+            classical martial arts center waterloo
+          </h1>
+          <hr className="divider" />
+        </div>
+        {/* col */}
+        <div className="col-8 align-self-baseline">
+          <p className="font-white font-light">
+            Serving the Kitchener-Waterloo community for 30 years
+          </p>
+        </div>
+        {/* col */}
+      </div>
+      {/* row */}
+      <div className="row text-center" style={{ position: 'absolute', bottom: '40px' }}>
+        <div className="col-8 align-self-center">
+          <button type="button" aria-label="scroll" className="styleless-button" style={{ position: 'relative' }}>
+            Find out more
+            <span className="scroll-indicator" />
+          </button>
+        </div>
+        {/* col */}
+      </div>
+    </div>
+    {/* container */}
+  </header>
+);
+
+export default Masthead;
