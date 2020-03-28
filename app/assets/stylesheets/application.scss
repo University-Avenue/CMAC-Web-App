@@ -362,10 +362,8 @@ nav {
   .navbar-nav .nav-item .nav-link.active {
     color: $nav-scrolled-text-color !important;
   }
-}
 
-@media (min-width: 992px) {
-  #mainNav {
+  @include lg {
     box-shadow: none;
     background-color: transparent;
 
@@ -382,7 +380,9 @@ nav {
       color: $nav-hover-text-color;
     }
   }
+}
 
+@include lg {
   #mainNav.navbar-scrolled {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     background-color: $nav-color;
