@@ -3,8 +3,8 @@ import React from 'react';
 const Masthead = () => (
   <header className="masthead">
     <div className="container">
-      <div className="row text-center">
-        <div className="col-8 align-self-end">
+      <div className="row text-center" style={{ height: '100%' }}>
+        <div className="col-md-12 col-lg-10 align-self-end">
           <h1 className="font-white font-bold text-uppercase">
             classical martial arts center waterloo
           </h1>
@@ -17,17 +17,22 @@ const Masthead = () => (
           </p>
         </div>
         {/* col */}
-      </div>
-      {/* row */}
-      <div className="row text-center" style={{ position: 'absolute', bottom: '40px' }}>
-        <div className="col-8 align-self-center">
-          <button type="button" aria-label="scroll" className="styleless-button" style={{ position: 'relative' }}>
+        <div className="col-8 align-self-stretch align-items-center">
+          <button
+            type="button"
+            aria-label="scroll"
+            className="styleless-button"
+            style={{
+              position: 'absolute', bottom: '80px', left: '50%', transform: 'translateX(-50%)',
+            }}
+          >
             Find out more
-            <span className="scroll-indicator" />
+            <span className="scroll-indicator">&nbsp;</span>
           </button>
         </div>
         {/* col */}
       </div>
+      {/* row */}
     </div>
     {/* container */}
   </header>
