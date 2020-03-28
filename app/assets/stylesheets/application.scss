@@ -110,6 +110,7 @@ body {
 }
 
 // Nav bar
+
 nav {
   display: block;
 }
@@ -132,34 +133,6 @@ nav {
   color: #6c757d;
   pointer-events: none;
   cursor: default;
-}
-
-.nav-tabs {
-  border-bottom: 1px solid #dee2e6;
-  .nav-item{
-    margin-bottom: -1px;
-  }
-
-  .nav-link{
-    border: 1px solid transparent;
-    border-top-left-radius: 0.25rem;
-    border-top-right-radius: 0.25rem;
-  }
-
-  .nav-link:hover, .nav-link:focus{
-    border-color: $nav-border-color $nav-border-color #dee2e6;
-  }
-
-  .nav-link.disabled{
-    color: #6c757d;
-    background-color: transparent;
-    border-color: transparent;
-  }
-  .nav-link.active, .nav-item.show .nav-link {
-    color: #495057;
-    background-color: $nav-color;
-    border-color: #dee2e6 #dee2e6 $nav-color;
-  }
 }
 
 .navbar {
@@ -379,6 +352,13 @@ nav {
     .navbar-nav .nav-item .nav-link:hover {
       color: $nav-hover-text-color;
     }
+  }
+}
+
+
+@include sm {
+  .navbar-expand-md .navbar-toggler {
+    display: none;
   }
 }
 
