@@ -3,7 +3,7 @@ import React from 'react';
 const Masthead = () => (
   <header className="masthead">
     <div className="container">
-      <div className="row text-center" style={{ height: '100%' }}>
+      <div className="row text-center justify-content-center" style={{ height: '100%' }}>
         <div className="col-md-12 col-lg-10 align-self-end">
           <h1 className="font-white font-bold text-uppercase">
             classical martial arts center waterloo
@@ -27,7 +27,7 @@ const Masthead = () => (
             }}
           >
             Find out more
-            <span className="scroll-indicator">&nbsp;</span>
+            <span className="scroll-indicator" />
           </button>
         </div>
         {/* col */}

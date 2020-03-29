@@ -11,7 +11,7 @@
  * It is generally better to create a new file per style scope.
  */
  @import "bootstrap";
-
+ @import "home";
 // Global Variables
 
 // Small tablets and large smartphones (landscape view)
@@ -24,7 +24,7 @@ $screen-md-min: 768px;
 $screen-lg-min: 992px;
 
 // Large tablets and desktops
-$screen-xl-min: 1200px;
+$screen-xl-min: 1200px; 
 
 // Sizing
 $header-height: 70px;
@@ -35,7 +35,6 @@ $cmac-logo-width: 50px;
 $nav-menu-control-height: 60px;
 $nav-menu-control-width: 60px;
 $nav-menu-item-height: 8vh;
-$scroll-indicator-width-height: 24px;
 
 // Colors
 $primary-gradient: linear-gradient(90deg, rgba(235,51,73,1) 0%, rgba(244,92,67,1) 100%);
@@ -58,55 +57,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
-}
-
-// Homepage
-.masthead {
-  height: 100vh;
-  box-sizing: border-box;
-  background: $primary-gradient;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
-  padding-top: $header-height;
-  .container {
-    height: 100% !important;
-    .row {
-      align-items: center;
-      justify-content: center;
-      .col-12, .col-8 {
-        button {
-          color: white;
-          background: none;
-        }
-      }
-    }
-  }
-}
-
-.divider {
-  max-width: 4rem;
-  border-width: 0.2rem;
-  border-color: white;
-}
-
-.home-page-section {
-  height: 100vh;
-  padding-top: 10rem;
-}
-
-.scroll-indicator {
-  position: absolute;
-  top: 25px;
-  left: 36%;
-  width:  $scroll-indicator-width-height;
-  height: $scroll-indicator-width-height;
-  border-right: 2px solid white;
-  border-bottom: 2px solid white;
-  box-sizing: border-box;
-  animation: scroll-indicator 1.5s infinite;
 }
 
 @keyframes scroll-indicator {
@@ -121,6 +71,7 @@ body {
     transform: rotate(45deg) translate(15px, 15px);
     opacity: 0;
   }
+}
 
 // Colors
 $nav-color: white;
@@ -163,15 +114,6 @@ $nav-border-color: #e9ecef;
   @media (min-width: $screen+'px') {
     @content;
   }
-}
-
-body {
-  box-sizing: border-box;
-  padding-top: $header-height;
-  margin: 0;
-  // for testing the nav bar:
-  background: rgb(235,51,73);
-  background: linear-gradient(90deg, rgba(235,51,73,1) 0%,$nav-scrolled-hover-text-color);
 }
 
 // Miscellaneous
@@ -247,6 +189,14 @@ body {
 
 .align-items-center {
   align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.text-center {
+  text-align: center;
 }
 
 // Breakpoints
