@@ -11,7 +11,7 @@
  * It is generally better to create a new file per style scope.
  */
  @import "bootstrap";
-
+ @import "home";
 // Global Variables
 
 // Small tablets and large smartphones (landscape view)
@@ -24,10 +24,58 @@ $screen-md-min: 768px;
 $screen-lg-min: 992px;
 
 // Large tablets and desktops
-$screen-xl-min: 1200px;
+$screen-xl-min: 1200px; 
 
 // Sizing
 $header-height: 70px;
+$footer-height: 60px;
+$nav-menu-width: 250px;
+$cmac-logo-height: 50px;
+$cmac-logo-width: 50px;
+$nav-menu-control-height: 60px;
+$nav-menu-control-width: 60px;
+$nav-menu-item-height: 8vh;
+
+// Colors
+$primary-gradient: linear-gradient(90deg, rgba(235,51,73,1) 0%, rgba(244,92,67,1) 100%);
+
+* {
+  font-family: 'Avenir Next';
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+#page-header {
+  position: fixed;
+  height: $header-height;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@keyframes scroll-indicator {
+  0% {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(45deg) translate(15px, 15px);
+    opacity: 0;
+  }
+}
 
 // Colors
 $nav-color: white;
@@ -72,15 +120,6 @@ $nav-border-color: #e9ecef;
   }
 }
 
-body {
-  box-sizing: border-box;
-  padding-top: $header-height;
-  margin: 0;
-  // for testing the nav bar:
-  background: rgb(235,51,73);
-  background: linear-gradient(90deg, rgba(235,51,73,1) 0%,$nav-scrolled-hover-text-color);
-}
-
 // Miscellaneous
 .icon-button {
   font-size: 100%;
@@ -106,6 +145,92 @@ body {
   i {
     margin-left: 20px;
     margin-right: 20px;
+  }
+}
+
+.styleless-button {
+  background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+  outline: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.font-white {
+  color: white;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.align-self-start {
+  align-self: flex-start;
+}
+
+.align-self-end {
+  align-self: flex-end;
+}
+
+.align-self-baseline {
+  align-self: baseline;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// Breakpoints
+@media only screen and (min-width: 1200px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 768px) { 
+  h1 {
+    font-size: 3rem;
+  }
+  p, .styleless-button {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 576px) { 
+  h1 {
+    font-size: 4rem;
+  }
+  p, .styleless-button {
+    font-size: 1.75rem;
   }
 }
 
