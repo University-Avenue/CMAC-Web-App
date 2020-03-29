@@ -20,9 +20,10 @@ $primary-gradient: linear-gradient(90deg, rgba(235,51,73,1) 0%, rgba(244,92,67,1
     height: 100% !important;
     .row {
       .col-12, .col-8 {
-        button {
+        a {
           color: white;
           background: none;
+          text-decoration: none;
         }
       }
     }
@@ -30,22 +31,29 @@ $primary-gradient: linear-gradient(90deg, rgba(235,51,73,1) 0%, rgba(244,92,67,1
 }
 
 .home-page-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
   padding-top: $header-height;
   height: 100vh;
   .row {
     height: 100%;
+    width: 100%;
   }
 }
 
 #image-gallery {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   height: 100vh;
   padding-top: $header-height;
   box-sizing: border-box;
   .row {
     flex: 1 1 auto;
+    width: 100%;
   }
   footer {
     flex: 0 1 $footer-height;

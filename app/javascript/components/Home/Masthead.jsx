@@ -18,17 +18,15 @@ const Masthead = () => (
         </div>
         {/* col */}
         <div className="col-8 align-self-stretch align-items-center">
-          <button
-            type="button"
-            aria-label="scroll"
-            className="styleless-button"
+          <a
+            href="#our-story"
             style={{
               position: 'absolute', bottom: '80px', left: '50%', transform: 'translateX(-50%)',
             }}
           >
             Find out more
             <span className="scroll-indicator" />
-          </button>
+          </a>
         </div>
         {/* col */}
       </div>

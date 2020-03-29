@@ -7,7 +7,7 @@ const ImageGallerySection = () => (
       <div className="col-8 align-self-center">
         <h4>Image Gallery</h4>
       </div>
-      <div className="col-8 align-self-start">
+      <div className="col-11 align-self-center">
         <div className="home-section-content-container">
         </div>
       </div>
