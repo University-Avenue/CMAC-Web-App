@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CMACLogo2 from '../../assets/images/CMAC-logo-2.png';
 
-function HeaderComponent() {
+function Navbar() {
   const [scrolled, setScrolled] = useState('');
 
   const listenToScroll = () => {
@@ -22,7 +22,7 @@ function HeaderComponent() {
   }, []);
 
   return (
-    <nav className={`navbar navbar-expand-lg navbar-light fixed-top py-3 ${scrolled}`} id="mainNav">
+    <nav className={`navbar navbar-expand-lg navbar-light fixed-top ${scrolled}`} id="mainNav">
       <a className="navbar-brand js-scroll-trigger" href="/">
         <img
           src={CMACLogo2}
@@ -59,4 +59,4 @@ function HeaderComponent() {
   );
 }
 
-export default HeaderComponent;
+export default Navbar;
