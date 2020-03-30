@@ -33,19 +33,18 @@ html {
 
 body {
   box-sizing: border-box;
-  margin: 0px;
+  margin: 0;
 }
 
 #page-header {
   position: fixed;
-  height: $header-height;
-  top: 0px;
-  left: 0px;
-  right: 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1;
+  @include media-breakpoint-up(lg){
+    height: $header-height;
+  }
 }
 
 @keyframes scroll-indicator {
