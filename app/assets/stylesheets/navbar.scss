@@ -1,12 +1,12 @@
+@import "mobile-nav";
+
 // Colors
 $nav-color: white;
 $nav-hover-text-color: white;
-$nav-scrolled-text-color: #212529;
-$nav-scrolled-hover-text-color: rgba(244,92,67,1);
+$nav-dark-text-color: #212529;
+$nav-dark-text-hover-color: rgba(244,92,67,1);
 $nav-border-color: #e9ecef;
-
-// Sizing
-$header-height: 70px;
+$nav-disabled-color: #6c757d;
 
 nav {
   height: inherit;
@@ -29,7 +29,7 @@ nav {
   text-decoration: none;
 }
 .nav-link.disabled {
-  color: #6c757d;
+  color: $nav-disabled-color;
   pointer-events: none;
   cursor: default;
 }
@@ -208,7 +208,7 @@ nav {
   display: none;
 }
 
-#mainNav {
+#desktopNav {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   background-color: $nav-color;
   transition: background-color 0.2s ease;
@@ -216,11 +216,11 @@ nav {
   .navbar-brand {
     font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 700;
-    color: $nav-scrolled-text-color;
+    color: $nav-dark-text-color;
   }
 
   .navbar-nav .nav-item .nav-link {
-    color: #6c757d;
+    color: $nav-dark-text-color;
     font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 700;
     font-size: 0.9rem;
@@ -232,7 +232,7 @@ nav {
   }
 
   .navbar-nav .nav-item .nav-link.active {
-    color: $nav-scrolled-text-color !important;
+    color: $nav-dark-text-color !important;
   }
 
   @include media-breakpoint-up(lg) {
@@ -252,6 +252,13 @@ nav {
       color: $nav-hover-text-color;
     }
   }
+
+  @include media-breakpoint-down(md){
+    .navbar-nav .nav-item .nav-link:hover, .navbar-nav .nav-item .nav-link:active {
+      color: $nav-dark-text-hover-color;
+    }
+    display: none;
+  }
 }
 
 
@@ -262,24 +269,24 @@ nav {
 }
 
 @include media-breakpoint-up(lg) {
-  #mainNav.navbar-scrolled {
+  #desktopNav.navbar-scrolled {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     background-color: $nav-color;
   }
 
-  #mainNav.navbar-scrolled .navbar-brand {
-    color: $nav-scrolled-text-color;
+  #desktopNav.navbar-scrolled .navbar-brand {
+    color: $nav-dark-text-color;
   }
 
-  #mainNav.navbar-scrolled .navbar-brand:hover {
-    color: $nav-scrolled-hover-text-color;
+  #desktopNav.navbar-scrolled .navbar-brand:hover {
+    color: $nav-dark-text-hover-color;
   }
 
-  #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link {
-    color: $nav-scrolled-text-color;
+  #desktopNav.navbar-scrolled .navbar-nav .nav-item .nav-link {
+    color: $nav-dark-text-color;
   }
 
-  #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
-    color: $nav-scrolled-hover-text-color;
+  #desktopNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
+    color: $nav-dark-text-hover-color;
   }
 }
