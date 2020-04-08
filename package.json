@@ -7,6 +7,7 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
+    "@types/react-visibility-sensor": "^5.0.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
@@ -16,6 +17,8 @@
     "react-dom": "^16.13.0",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
+    "react-scroll": "^1.7.16",
+    "react-visibility-sensor": "^5.1.1",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "turbolinks": "^5.2.0"

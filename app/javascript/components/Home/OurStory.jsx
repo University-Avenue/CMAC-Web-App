@@ -7,7 +7,7 @@ const OurStorySection = () => (
       <div className="col-8 align-self-center">
         <h4>Our Story</h4>
       </div>
-      <div className="col-8 align-self-center text-center">
+      <div className="col-8 align-self-start text-center">
         <div className="home-section-content-container">
           <span className="top-left-gradient-corner" />
           <span className="bottom-right-gradient-corner" />
