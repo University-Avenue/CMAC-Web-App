@@ -1,164 +1,31 @@
 @import "global";
 
-
-@mixin transition($params) {
-  -webkit-transition: $params;
-  -moz-transition: $params;
-  -khtml-transition: $params;
-  -o-transition: $params;
-  transition: $params;
-}
-
-@mixin scale($params) {
-  -webkit-transform: scale($params);
-  -moz-transform: scale($params);
-  -khtml-transform: scale($params);
-  -o-transform: scale($params);
-  transform: scale($params);
-}
-
-@mixin box-shadow($params) {
-  -webkit-box-shadow:$params;
-  -moz-box-shadow:$params;
-  -khtml-box-shadow:$params;
-  -o-box-shadow:$params;
-  box-shadow:$params;
-}
-
-@mixin rotate($params) {
-  -webkit-transform: rotate($params);
-  -moz-transform: rotate($params);
-  -khtml-transform: rotate($params);
-  -o-transform: rotate($params);
-  transform: rotate($params);
-}
-
-@mixin opacity($opacity) {
-  -webkit-opacity:$opacity;
-  -moz-opacity:$opacity;
-  -khtml-opacity:$opacity;
-  -o-opacity:$opacity;
-  opacity:$opacity;
-}
-
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -khtml-border-radius: $radius;
-  -o-border-radius: $radius;
-  border-radius: $radius;
-}
-
 .mobile-container {
-  height: inherit;
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
-  overflow: auto;
-  background-color: white;
-}
-
-#burgerBtn {
-  border-top:2px solid #f85051;
-  height:25px;
-  width:30px;
-  box-sizing:border-box;
-  position:absolute;
-  z-index:30;
-  left:20px;
-  top:15px;
-  cursor:pointer;
-  @include transition(all 0.3s ease-in);
-  &:before {
-    content:"";
-    display:block;
-    position:absolute;
-    height:2px;
-    width:30px;
-    left:0;
-    background:#f85051;
-    top:10px;
-    @include transition(all 0.3s ease-in);
-  }
-  &:after {
-    content:"";
-    display:block;
-    position:absolute;
-    height:2px;
-    width:30px;
-    left:0;
-    background:#f85051;
-    bottom:0;
-    @include transition(all 0.3s ease-in);
-  }
-}
-
-.banner {
   width: inherit;
-  height: inherit;
-  background-color: $background-color;
-}
-
-#nav {
-  position:absolute;
-  z-index:10;
-  list-style-type:none;
-  margin:100px 0 0 20px;
-  padding:0;
-  overflow:hidden;
-  background-color: $background-color;
+  height: 100%;
+  background-color: $mobile-nav-color;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
   li {
-    height:30px;
-    width:0;
-    margin:30px 0;
-    background:$background-color;
-    a {
-      text-decoration: none;
-      color: black;
-    }
-    @include transition(all 0.6s ease-in);
-    & + li {
-      margin-left:-40px;
-      & + li {
-        margin-left:-80px;
-        & + li {
-          margin-left:-120px;
-        }
-      }
-    }
+    display: flex;
+    flex: 1;
+    vertical-align: middle;
+    justify-content: center;
+  }
+  a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #dc3545;
+    font-size: 5vw;
+  }
+  a:hover, a:focus{
+    color: #dc3545;
+    text-decoration: none;
   }
 }
 
-.navigation {
-  #nav li {
-    width:200px;
-    margin-left:0;
-  }
-  #burgerBtn {
-    border-color:transparent;
-    &:before {
-      @include rotate(45deg);
-      width:33px;
-      left:-2px;
-    }
-    &:after {
-      @include rotate(135deg);
-      bottom:11px;
-      width:33px;
-      left:-2px;
-    }
-  }
-}
-
-#page-content{
-  @include transition(all 0.6s ease-in);
-}
-
-.transition {
-  @include scale(0.95);
-  margin-left: 100px;
-}
