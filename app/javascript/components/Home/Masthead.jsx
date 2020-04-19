@@ -9,7 +9,7 @@ const Masthead = () => {
     setIntialPageLoad(false);
   }, []);
 
-  const visibilityChange = (isVisible) => {
+  const handleVisibilityChange = (isVisible) => {
     const dotNavigator = document.getElementById('dot-navigator');
     if (isVisible) {
       dotNavigator.classList.remove('fade-in');
@@ -26,7 +26,7 @@ const Masthead = () => {
     <VisibilitySensor
       partialVisibility
       offset={{ top: 200 }}
-      onChange={visibilityChange}
+      onChange={handleVisibilityChange}
     >
       <header className="masthead">
         <div className="container">

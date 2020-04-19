@@ -1,17 +1,19 @@
 import React from 'react';
 import CMACLogo1 from '../../../assets/images/CMAC-logo-1.png';
 
-const CMACSection = () => (
-  <section id="cmac" className="home-page-section">
-    <div className="row text-center justify-content-center">
-      <div className="col-8 align-self-center">
-        <h4>CMAC</h4>
+export default function CMACSection() {
+  return (
+    <section id="cmac" className="home-page-section">
+      <div className="home-page-section-title-container">
+        <h3>CMAC</h3>
       </div>
-      <div className="col-8 align-self-start">
-        <div className="home-section-content-container">
+      <div className="home-page-section-content-container">
+        <div className="home-page-section-content">
           <span className="top-left-gradient-corner" />
           <span className="bottom-right-gradient-corner" />
-          <img src={CMACLogo1} alt="" />
+          <div className="home-page-section-image-container">
+            <img src={CMACLogo1} alt="" />
+          </div>
           <p>
             Our centre is a proud member of
             {' '}
@@ -30,8 +32,6 @@ const CMACSection = () => (
           </p>
         </div>
       </div>
-    </div>
-  </section>
-);
-
-export default CMACSection;
+    </section>
+  );
+}

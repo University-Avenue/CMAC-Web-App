@@ -1,79 +1,117 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-scroll';
 
-const DotNavigator = () => {
-  const [activeSection, setActiveSection] = useState('ourStory');
-  const target = useRef(null);
+export default function DotNavigator(props) {
+  const { visibleSection, setVisibleSection } = props;
 
   return (
     <div id="dot-navigator" className="dot-navigator">
-      <ul>
-        <li>
+      <ul className="dots">
+        <li className="dot-list-item">
           <Link
+            className="dot"
             to="our-story"
             duration={1000}
             smooth
-            onClick={() => { setActiveSection('ourStory'); }}
-            target={target.current}
+            onClick={() => { setVisibleSection('ourStory'); }}
           >
-            <span className={`dot ${activeSection === 'ourStory' ? 'fill' : ''}`} />
+            <div className="circle-container">
+              <span className="outer-circle">
+                <span className={`inner-circle ${visibleSection === 'ourStory' ? 'fill' : ''}`} />
+              </span>
+            </div>
           </Link>
+          <p className="dot-title">Our Story</p>
         </li>
-        <li>
+        <li className="dot-list-item">
           <Link
+            className="dot"
             to="cmac"
             duration={1000}
             smooth
             onClick={() => {
-              setActiveSection('cmac');
+              setVisibleSection('cmac');
             }}
           >
-            <span className={`dot ${activeSection === 'cmac' ? 'fill' : ''}`} />
+            <div className="circle-container">
+              <span className="outer-circle">
+                <span className={`inner-circle ${visibleSection === 'cmac' ? 'fill' : ''}`} />
+              </span>
+            </div>
           </Link>
+          <p className="dot-title">CMAC</p>
         </li>
-        <li>
+        <li className="dot-list-item">
           <Link
+            className="dot"
             to="why-you-should-join"
             duration={1000}
             smooth
-            onClick={() => { setActiveSection('whyYouShouldJoin'); }}
+            onClick={() => { setVisibleSection('whyYouShouldJoin'); }}
           >
-            <span className={`dot ${activeSection === 'whyYouShouldJoin' ? 'fill' : ''}`} />
+            <div className="circle-container">
+              <span className="outer-circle">
+                <span className={`inner-circle ${visibleSection === 'whyYouShouldJoin' ? 'fill' : ''}`} />
+              </span>
+            </div>
           </Link>
+          <p className="dot-title">Join</p>
         </li>
-        <li>
+        <li className="dot-list-item">
           <Link
+            className="dot"
             to="our-instructors"
             duration={1000}
             smooth
-            onClick={() => { setActiveSection('ourInstructors'); }}
+            onClick={() => { setVisibleSection('ourInstructors'); }}
           >
-            <span className={`dot ${activeSection === 'ourInstructors' ? 'fill' : ''}`} />
+            <div className="circle-container">
+              <span className="outer-circle">
+                <span className={`inner-circle ${visibleSection === 'ourInstructors' ? 'fill' : ''}`} />
+              </span>
+            </div>
           </Link>
+          <p className="dot-title">Our Instructors</p>
         </li>
-        <li>
+        <li className="dot-list-item">
           <Link
+            className="dot"
             to="todays-schedule"
             duration={1000}
             smooth
-            onClick={() => { setActiveSection('todaysSchedule'); }}
+            onClick={() => { setVisibleSection('todaysSchedule'); }}
           >
-            <span className={`dot ${activeSection === 'todaysSchedule' ? 'fill' : ''}`} />
+            <div className="circle-container">
+              <span className="outer-circle">
+                <span className={`inner-circle ${visibleSection === 'todaysSchedule' ? 'fill' : ''}`} />
+              </span>
+            </div>
           </Link>
+          <p className="dot-title">Today&apos;s Schedule</p>
         </li>
-        <li>
+        <li className="dot-list-item">
           <Link
+            className="dot"
             to="image-gallery"
             duration={1000}
             smooth
-            onClick={() => { setActiveSection('imageGallery'); }}
+            onClick={() => { setVisibleSection('imageGallery'); }}
           >
-            <span className={`dot ${activeSection === 'imageGallery' ? 'fill' : ''}`} />
+            <div className="circle-container">
+              <span className="outer-circle">
+                <span className={`inner-circle ${visibleSection === 'imageGallery' ? 'fill' : ''}`} />
+              </span>
+            </div>
           </Link>
+          <p className="dot-title">Image Gallery</p>
         </li>
       </ul>
     </div>
   );
-};
+}
 
-export default DotNavigator;
+DotNavigator.propTypes = {
+  visibleSection: PropTypes.string.isRequired,
+  setVisibleSection: PropTypes.func.isRequired,
+};
