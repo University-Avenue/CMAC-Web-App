@@ -16,12 +16,13 @@
     justify-content: center;
   }
   a{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     color: #dc3545;
-    font-size: 3vw;
+    font-size: 4vw;
   }
   a:hover, a:focus{
     color: #dc3545;

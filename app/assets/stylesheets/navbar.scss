@@ -1,4 +1,4 @@
-@import "mobile-nav";
+@import "navbar_mobile";
 
 // Colors
 $nav-color: white;
@@ -210,7 +210,6 @@ nav {
 
 #desktopNav {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  background-color: $nav-color;
   transition: background-color 0.2s ease;
 
   .navbar-brand {
@@ -237,7 +236,7 @@ nav {
 
   @include media-breakpoint-up(xs) {
     box-shadow: none;
-    background-color: transparent;
+    background-image: $primary-gradient;
 
     .navbar-brand, .navbar-brand:hover {
       color: $nav-hover-text-color;
@@ -253,33 +252,33 @@ nav {
     }
   }
 
-  @include media-breakpoint-down(xs){
-    .navbar-nav .nav-item .nav-link:hover, .navbar-nav .nav-item .nav-link:active {
-      color: $nav-dark-text-hover-color;
-    }
+  @include media-breakpoint-down(xs) {
     display: none;
   }
 }
 
 @include media-breakpoint-up(xs) {
-  #desktopNav.navbar-scrolled {
+  #desktopNav.navbar-home-page {
+    background: transparent;
+  }
+
+  #desktopNav.navbar-scrolled{
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     background-color: $nav-color;
-  }
+    .navbar-brand {
+      color: $nav-dark-text-color;
+    }
 
-  #desktopNav.navbar-scrolled .navbar-brand {
-    color: $nav-dark-text-color;
-  }
+    .navbar-brand:hover {
+      color: $nav-dark-text-hover-color;
+    }
 
-  #desktopNav.navbar-scrolled .navbar-brand:hover {
-    color: $nav-dark-text-hover-color;
-  }
+    .navbar-nav .nav-item .nav-link {
+      color: $nav-dark-text-color;
+    }
 
-  #desktopNav.navbar-scrolled .navbar-nav .nav-item .nav-link {
-    color: $nav-dark-text-color;
-  }
-
-  #desktopNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
-    color: $nav-dark-text-hover-color;
+    .navbar-nav .nav-item .nav-link:hover {
+      color: $nav-dark-text-hover-color;
+    }
   }
 }

@@ -15,14 +15,16 @@ function DesktopNav() {
       setScrolled('');
     }
   };
-
-  useEffect(() => {
-    window.addEventListener('scroll', listenToScroll);
-    return () => window.removeEventListener('scroll', listenToScroll);
-  }, []);
+  const isHomePage = window.location.pathname === '/' ? 'navbar-home-page' : '';
+  if (isHomePage) {
+    useEffect(() => {
+      window.addEventListener('scroll', listenToScroll);
+      return () => window.removeEventListener('scroll', listenToScroll);
+    }, []);
+  }
 
   return (
-    <nav className={`navbar navbar-expand-lg navbar-light fixed-top ${scrolled}`} id="desktopNav">
+    <nav className={`navbar navbar-expand-lg navbar-light fixed-top ${scrolled} ${isHomePage}`} id="desktopNav">
       <a className="navbar-brand" href="/">
         <img
           src={CMACLogo2}
