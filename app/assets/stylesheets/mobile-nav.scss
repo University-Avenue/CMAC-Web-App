@@ -1,0 +1,35 @@
+@import "global";
+
+.mobile-container {
+  width: inherit;
+  height: 100%;
+  background-color: $mobile-nav-color;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  li {
+    display: flex;
+    flex: 1;
+    vertical-align: middle;
+    justify-content: center;
+  }
+  a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #dc3545;
+    font-size: 3vw;
+  }
+  a:hover, a:focus{
+    color: #dc3545;
+    text-decoration: none;
+  }
+  .nav-logo {
+    height: 50%;
+    width: auto;
+  }
+}
+
