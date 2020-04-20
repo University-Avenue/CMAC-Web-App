@@ -1,4 +1,11 @@
 @import "global";
-.heading {
+.contact-masthead {
   padding-top: $header-height;
+  height: 33vh;
+  .container {
+    height: 100%;
+  }
+  .row {
+    height: inherit;
+  }
 }

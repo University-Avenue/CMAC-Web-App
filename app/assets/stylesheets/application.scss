@@ -24,6 +24,12 @@ html {
   scroll-behavior: smooth;
 }
 
+h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+}
+
 #page-body {
   box-sizing: border-box;
   background-color: $background-color;

@@ -1,9 +1,10 @@
 import React from 'react';
+import Masthead from './Masthead';
 
 export default function ContactUsPage() {
   return (
     <>
-      <h1>Contact Us</h1>
+      <Masthead />
     </>
   );
 }
