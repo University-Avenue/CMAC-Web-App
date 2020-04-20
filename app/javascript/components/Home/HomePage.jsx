@@ -22,8 +22,8 @@ export default function HomePage() {
       <CMACSection setVisibleSection={(section) => { setVisibleSection(section); }} />
       <WhyYouShouldJoinSection setVisibleSection={(section) => { setVisibleSection(section); }} />
       <OurInstructorsSections setVisibleSection={(section) => { setVisibleSection(section); }} />
-            {/* 
       <TodaysScheduleSection setVisibleSection={(section) => { setVisibleSection(section); }} />
+                  {/* 
       <ImageGallerySection setVisibleSection={(section) => { setVisibleSection(section); }} /> */}
     </>
   );

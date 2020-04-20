@@ -11,8 +11,10 @@
  * It is generally better to create a new file per style scope.
  */
 @import "home";
-@import '~@fullcalendar/core/main.css';
-@import '~@fullcalendar/daygrid/main.css';
+@import '../../../node_modules/@fullcalendar/core/main.css';
+@import '../../../node_modules/@fullcalendar/daygrid/main.css';
+@import '../../../node_modules/@fullcalendar/timegrid/main.css';
+
 
 // Global Variables
 

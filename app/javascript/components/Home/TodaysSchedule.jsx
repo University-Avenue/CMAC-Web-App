@@ -1,17 +1,19 @@
 import React from 'react';
+import FullCalendar from '@fullcalendar/react';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import '../../stylesheets/application.scss';
 
-const TodaysScheduleSection = () => (
-  <section id="todays-schedule" className="home-page-section">
-    <div className="row text-center justify-content-center" style={{ height: '100%' }}>
-      <div className="col-8 align-self-center">
-        <h4>Today&apos;s Schedule</h4>
+export default function TodaysScheduleSection() {
+  return (
+    <section id="todays-schedule" className="home-page-section">
+      <div className="home-page-section-title-container">
+        <h3>Today&apos;s Schedule</h3>
       </div>
-      <div className="col-12 align-self-start">
-        <div className="home-section-content-container">
+      <div className="home-page-section-content-container">
+        <div className="home-page-section-content">
+          <FullCalendar defaultView="timeGridDay" plugins={[timeGridPlugin]} />
         </div>
       </div>
-    </div>
-  </section>
-);
-
-export default TodaysScheduleSection;
+    </section>
+  );
+}
