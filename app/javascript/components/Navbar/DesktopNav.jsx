@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import CMACLogo2 from '../../assets/images/CMAC-logo-2.png';
+import React, { useEffect, useState } from 'react';
+import CMACLogo2 from '../../../assets/images/CMAC-logo-2.png';
 
-function HeaderComponent() {
+function DesktopNav() {
   const [scrolled, setScrolled] = useState('');
 
   const listenToScroll = () => {
@@ -9,21 +9,23 @@ function HeaderComponent() {
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrollPercent = winScroll / height;
 
-    if (scrollPercent > 0.05) {
+    if (scrollPercent > 0.025) {
       setScrolled('navbar-scrolled');
     } else {
       setScrolled('');
     }
   };
-
-  useEffect(() => {
-    window.addEventListener('scroll', listenToScroll);
-    return () => window.removeEventListener('scroll', listenToScroll);
-  }, []);
+  const isHomePage = window.location.pathname === '/' ? 'navbar-home-page' : '';
+  if (isHomePage) {
+    useEffect(() => {
+      window.addEventListener('scroll', listenToScroll);
+      return () => window.removeEventListener('scroll', listenToScroll);
+    }, []);
+  }
 
   return (
-    <nav className={`navbar navbar-expand-lg navbar-light fixed-top py-3 ${scrolled}`} id="mainNav">
-      <a className="navbar-brand js-scroll-trigger" href="/">
+    <nav className={`navbar navbar-expand-lg navbar-light fixed-top ${scrolled} ${isHomePage}`} id="desktopNav">
+      <a className="navbar-brand" href="/">
         <img
           src={CMACLogo2}
           height={50}
@@ -37,19 +39,19 @@ function HeaderComponent() {
       <div className="collapse navbar-collapse" id="navbarResponsive">
         <ul className="navbar-nav ml-auto my-2 my-lg-0">
           <li className="nav-item">
-            <a className="nav-link js-scroll-trigger" href="/">Home</a>
+            <a className="nav-link" href="/">Home</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link js-scroll-trigger" href="/tragit in">Train</a>
+            <a className="nav-link" href="/train">Train</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link js-scroll-trigger" href="/schedule">Schedule</a>
+            <a className="nav-link" href="/schedule">Schedule</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link js-scroll-trigger" href="/contact_us">Contact us</a>
+            <a className="nav-link" href="/contact_us">Contact us</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link js-scroll-trigger" href="/profile">
+            <a className="nav-link" href="/profile">
               <i className="fas fa-user" />
             </a>
           </li>
@@ -59,4 +61,4 @@ function HeaderComponent() {
   );
 }
 
-export default HeaderComponent;
+export default DesktopNav;
