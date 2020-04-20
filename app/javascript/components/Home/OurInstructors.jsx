@@ -34,7 +34,7 @@ export default function OurInstructorsSections() {
   ];
 
   const senpaisList = senpais.map((senpai) => (
-    <div className="col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center p-2">
+    <div key={senpai.name} className="col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center p-2">
       <div className="instructor-card-container">
         <div className="instructor-card">
           <img src={senpai.image} alt="" />
