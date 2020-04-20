@@ -21,11 +21,15 @@
     justify-content: center;
     text-decoration: none;
     color: #dc3545;
-    font-size: 5vw;
+    font-size: 3vw;
   }
   a:hover, a:focus{
     color: #dc3545;
     text-decoration: none;
+  }
+  .nav-logo {
+    height: 50%;
+    width: auto;
   }
 }
 

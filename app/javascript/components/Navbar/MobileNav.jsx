@@ -1,11 +1,12 @@
 import React from 'react';
+import logo from '../../../assets/images/CMAC-logo-2.png';
 
 function MobileNav() {
   return (
     <ul className="mobile-container">
       <li>
         <a href="/">
-          <i className="fas fa-home" />
+          <img src={logo} alt="cmac-logo" className="nav-logo" />
         </a>
       </li>
       <li>
@@ -20,7 +21,12 @@ function MobileNav() {
       </li>
       <li>
         <a href="/">
-          <i className="fas fa-phone" />
+          <i className="fas fa-envelope" />
+        </a>
+      </li>
+      <li>
+        <a href="/">
+          <i className="fas fa-user-circle" />
         </a>
       </li>
     </ul>

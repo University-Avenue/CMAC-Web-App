@@ -116,7 +116,7 @@ nav {
   background-size: 100% 100%;
 }
 
-@include media-breakpoint-up(lg) {
+@include media-breakpoint-up(xs) {
   .navbar-expand-lg > .container,
   .navbar-expand-lg > .container-fluid,
   .navbar-expand-lg > .container-sm,
@@ -128,7 +128,7 @@ nav {
   }
 }
 
-@include media-breakpoint-up(lg){
+@include media-breakpoint-up(xs){
   .navbar-expand-lg {
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -235,7 +235,7 @@ nav {
     color: $nav-dark-text-color !important;
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xs) {
     box-shadow: none;
     background-color: transparent;
 
@@ -253,7 +253,7 @@ nav {
     }
   }
 
-  @include media-breakpoint-down(md){
+  @include media-breakpoint-down(xs){
     .navbar-nav .nav-item .nav-link:hover, .navbar-nav .nav-item .nav-link:active {
       color: $nav-dark-text-hover-color;
     }
@@ -261,14 +261,7 @@ nav {
   }
 }
 
-
-@include media-breakpoint-up(sm) {
-  .navbar-expand-md .navbar-toggler {
-    display: none;
-  }
-}
-
-@include media-breakpoint-up(lg) {
+@include media-breakpoint-up(xs) {
   #desktopNav.navbar-scrolled {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     background-color: $nav-color;

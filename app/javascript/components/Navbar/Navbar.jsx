@@ -4,9 +4,9 @@ import DesktopNav from './DesktopNav';
 import useWindowDimensions from './useWindowDimensions';
 
 function Navbar() {
-  const { height, width } = useWindowDimensions();
+  const window = useWindowDimensions();
 
-  if (width > 992) {
+  if (window.width > 576) {
     return <DesktopNav />;
   }
   return <MobileNav />;
