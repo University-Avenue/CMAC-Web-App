@@ -24,7 +24,7 @@ function DesktopNav() {
   }
 
   return (
-    <nav className={`navbar navbar-expand-lg navbar-light fixed-top ${scrolled} ${isHomePage}`} id="desktopNav">
+    <nav className={`navbar navbar-expand-lg navbar-light fixed-top ${scrolled} ${isHomePage}`}>
       <a className="navbar-brand" href="/">
         <img
           src={CMACLogo2}
@@ -35,27 +35,25 @@ function DesktopNav() {
         />
         CMAC
       </a>
-      <div className="collapse navbar-collapse" id="navbarResponsive">
-        <ul className="navbar-nav ml-auto my-2 my-lg-0">
-          <li className="nav-item">
-            <a className="nav-link" href="/">Home</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/train">Train</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/schedule">Schedule</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/contact_us">Contact us</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/profile">
-              <i className="fas fa-user" />
-            </a>
-          </li>
-        </ul>
-      </div>
+      <ul className="navbar-nav ml-auto my-2 my-lg-0">
+        <li className="nav-item">
+          <a className="nav-link" href="/">Home</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/train">Train</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/schedule">Schedule</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/contact_us">Contact us</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/profile">
+            <i className="fas fa-user" />
+          </a>
+        </li>
+      </ul>
     </nav>
   );
 }
