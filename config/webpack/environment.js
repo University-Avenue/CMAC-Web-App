@@ -1,12 +1,32 @@
 /* eslint-disable */
-const { environment } = require('@rails/webpacker')
 
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],
+      },
+    ],
+  },
+};
+
+const { environment } = require('@rails/webpacker')
 const webpack = require('webpack');
 
-environment.plugins.prepend('Provide',
+environment.plugins.append(
+  'Provide',
   new webpack.ProvidePlugin({
-    $: 'jquery/src/jquery',
-    jQuery: 'jquery/src/jquery'
+    $: 'jquery',
+    jQuery: 'jquery',
+    Popper: ['popper.js', 'default']
   })
 )
 

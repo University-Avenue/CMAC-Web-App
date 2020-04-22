@@ -1,0 +1,129 @@
+@import "navbar_mobile";
+
+// Colors
+$nav-color: white;
+$nav-text-light-color: white;
+$nav-text-light-hover-color: white;
+$nav-text-dark-color: #212529;
+$nav-text-dark-hover-color: rgba(244,92,67,1);
+$nav-border-color: #e9ecef;
+$nav-disabled-color: #6c757d;
+
+nav {
+  height: inherit;
+  width: inherit;
+  box-sizing: border-box;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-image: $primary-gradient;
+  height: inherit;
+  transition: background-color 0.2s ease;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+    font-weight: 700;
+    font-kerning: normal;
+    color: $nav-text-light-color;
+    &:hover, &:focus {
+      text-decoration: none;
+      color: $nav-text-light-hover-color;
+    }
+  }
+
+  .navbar-logo {
+    margin: 0 0.5rem;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+
+    .nav-link {
+      display: block;
+      padding: 0 1rem;
+      color: $nav-text-light-color;
+      font-weight: 700;
+      font-kerning: normal;
+      font-size: 0.9rem;
+
+      &:hover, &:focus {
+        text-decoration: none;
+        color: $nav-text-dark-color;
+      }
+
+      &:active {
+        color: $nav-text-light-color;
+      }
+
+      &.disabled{
+        color: $nav-disabled-color;
+        pointer-events: none;
+        cursor: default;
+      }
+    }
+  }
+
+  &.navbar-expand-lg {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
+
+  &.navbar-home-page {
+    background: transparent;
+  }
+
+  &.navbar-scrolled{
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    background-color: $nav-color;
+    .navbar-brand {
+      color: $nav-text-dark-color;
+    }
+
+    .navbar-brand:hover {
+      color: $nav-text-dark-hover-color;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+      color: $nav-text-dark-color;
+    }
+
+    .navbar-nav .nav-item .nav-link:hover {
+      color: $nav-text-dark-hover-color;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    display: none;
+  }
+}

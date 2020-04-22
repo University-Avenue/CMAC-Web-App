@@ -1,0 +1,352 @@
+@import "global";
+// Sizing
+$scroll-indicator-width-height: 24px;
+
+// Homepage
+.masthead {
+  height: 100vh;
+  box-sizing: border-box;
+  background: $primary-gradient;
+  background-position: center;
+  background-size: cover;
+  padding-top: $header-height;
+  z-index: 1010;
+  .container {
+    height: 100% !important;
+    .row {
+      .col-12, .col-8 {
+        a {
+          position: absolute;
+          bottom: 80px;
+          left: 50%;
+          transform: translateX(-50%);
+          color: white;
+          background: none;
+          text-decoration: none;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.scroll-indicator {
+  position: absolute;
+  top: 25px;
+  left: 36%;
+  width:  $scroll-indicator-width-height;
+  height: $scroll-indicator-width-height;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  box-sizing: border-box;
+  animation: scroll-indicator 1.5s infinite;
+}
+
+@keyframes scroll-indicator {
+  0% {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(45deg) translate(15px, 15px);
+    opacity: 0;
+  }
+}
+
+.home-page-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-top: $header-height;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.home-page-section-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.home-page-section-content-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-page-section-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 25px;
+  width: 75vw;
+  min-height: 50vh;
+  background: white;
+  z-index: 0;
+  .home-page-section-image-container {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 25px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  p {
+    font-size: 1.25rem;
+  }
+}
+
+.top-left-gradient-corner, .bottom-right-gradient-corner {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  z-index: -1;
+}
+
+.top-left-gradient-corner {
+  left: 0;
+  top: 0;
+  border-top: 25px solid $primary-color;
+  border-left: 25px solid $primary-color;
+}
+
+.bottom-right-gradient-corner {
+  right: 0;
+  bottom: 0;
+  border-bottom: 25px solid $primary-color;
+  border-right: 25px solid $primary-color;
+}
+
+.instructor-card {
+  width: 300px;
+  height: 390px;
+  border-radius: 5px;
+  position: relative;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    border-radius: inherit;
+    filter: grayscale(100%)
+  }
+  &:hover {
+    .instructor-bio-container {
+      opacity: 1;
+    }
+  }
+}
+
+.instructor-bio-container {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  text-align: center;
+  color: white;
+  opacity: 0;
+  border-radius: 5px;
+  background: rgba(0,0,0,0.6);
+  transition: opacity 0.5s;
+}
+
+.instructor-info-container {
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .top-left-gradient-corner, .bottom-right-gradient-corner {
+    width: 75px;
+    height: 75;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .home-page-section {
+    min-height: unset;
+    height: auto;
+  }
+  .home-page-section-title-container {
+    margin-bottom: 20px;
+  }
+  .home-page-section-content {
+    width: 90vw;
+    height: auto;
+    .home-page-section-image-container {
+      width: 100px;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+  .dot-navigator {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .top-left-gradient-corner, .bottom-right-gradient-corner {
+    width: 50px;
+    height: 50px;
+  }
+  .top-left-gradient-corner {
+    border-top: 15px solid $primary-color;
+    border-left: 15px solid $primary-color;
+  }
+  .bottom-right-gradient-corner {
+    border-bottom: 15px solid $primary-color;
+    border-right: 15px solid $primary-color;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .top-left-gradient-corner, .bottom-right-gradient-corner {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.divider {
+  max-width: 4rem;
+  border-width: 3px;
+  border-color: white;
+}
+
+.dot-navigator {
+  position: fixed;
+  width: 200px;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  opacity: 0;
+}
+
+.dots {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  .dot-list-item {
+    width: 100%;
+    height: 25px;
+    margin-bottom: 25px;
+    position: relative;
+    .dot {
+      width: 25px;
+      height: 25px;
+      display: block;
+      position: relative;
+      cursor: pointer;
+      &:hover + .dot-title{
+        display: block;
+      }
+      .circle-container {
+        float: left;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 45%;
+        left: 0;
+        transform: translateY(-45%);
+        .outer-circle {
+          display: inline-block;
+          position: relative;
+          width: 100%;
+          height: 100%;
+          background: $primary-color;
+          border-radius: 50%;
+          .inner-circle {
+            display: inline-block;
+            width: 70%;
+            height: 70%;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          .inner-circle.fill {
+            width: 0;
+            height: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dot-title {
+  margin: 0 0 0 5px;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  &::before {
+    content: '- ';
+  }
+}
+
+// Animations
+.fill {
+  animation: fill 0.25s linear;
+}
+
+@keyframes fill {
+  from {
+    width: 70%;
+    height: 70%;
+  }
+
+  to {
+    width: 0;
+    height: 0;
+  }
+}
+
+.fade-in {
+	animation: fade-in 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-out {
+	animation: fade-out 0.1s ease-out both;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

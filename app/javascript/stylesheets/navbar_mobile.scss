@@ -9,24 +9,28 @@
   list-style: none;
   display: flex;
   justify-content: space-between;
+
   li {
     display: flex;
     flex: 1;
     vertical-align: middle;
     justify-content: center;
   }
-  a{
+
+  a {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     color: #dc3545;
-    font-size: 3vw;
+    font-size: 4vw;
+    &:hover, &:focus {
+      color: #dc3545;
+      text-decoration: none;
+    }
   }
-  a:hover, a:focus{
-    color: #dc3545;
-    text-decoration: none;
-  }
+
   .nav-logo {
     height: 50%;
     width: auto;

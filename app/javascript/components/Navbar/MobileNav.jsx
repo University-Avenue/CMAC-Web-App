@@ -10,22 +10,22 @@ function MobileNav() {
         </a>
       </li>
       <li>
-        <a href="/">
+        <a href="/train">
           <i className="fas fa-heartbeat" />
         </a>
       </li>
       <li>
-        <a href="/">
+        <a href="/schedule">
           <i className="fas fa-calendar-day" />
         </a>
       </li>
       <li>
-        <a href="/">
+        <a href="/contact_us">
           <i className="fas fa-envelope" />
         </a>
       </li>
       <li>
-        <a href="/">
+        <a href="/profile">
           <i className="fas fa-user-circle" />
         </a>
       </li>
