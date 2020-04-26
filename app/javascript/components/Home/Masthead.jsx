@@ -29,36 +29,25 @@ const Masthead = () => {
       onChange={handleVisibilityChange}
     >
       <header className="masthead">
-        <div className="container">
-          <div className="row text-center justify-content-center" style={{ height: '100%' }}>
-            <div className="col-md-12 col-lg-10 align-self-end">
-              <h1 className="font-white font-bold text-uppercase">
-                classical martial arts center waterloo
-              </h1>
-              <hr className="divider" />
-            </div>
-            {/* col */}
-            <div className="col-8 align-self-baseline">
-              <p className="font-white font-light">
-                Serving the Kitchener-Waterloo community for 30 years
-              </p>
-            </div>
-            {/* col */}
-            <div className="col-8 align-self-stretch align-items-center">
-              <Link
-                to="our-story"
-                duration={1000}
-                smooth
-              >
-                Find out more
-                <span className="scroll-indicator" />
-              </Link>
-            </div>
-            {/* col */}
+        <div className="masthead-container">
+          <div className="masthead-title-container">
+            <h1 className="font-weight-bold text-uppercase">
+              Classical Martial Arts Center Waterloo
+            </h1>
+            <hr className="divider" />
+            Serving the Kitchener-Waterloo community for 30 years
           </div>
-          {/* row */}
+          <Link
+            className="masthead-scroll-indicator-container"
+            to="our-story"
+            duration={1000}
+            smooth
+          >
+            <div className="scroll-indicator">
+              <i className="fa fa-chevron-down" />
+            </div>
+          </Link>
         </div>
-        {/* container */}
       </header>
     </VisibilitySensor>
   );
