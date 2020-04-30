@@ -5,20 +5,14 @@
   width: 100%;
   .container {
     height: 100%;
+    max-width:100%;
+    padding: 0;
     width: inherit;
-    position: relative;
-    text-align: center;
-  }
-  .header-img{
-    width: inherit;
-    height: inherit;
-    object-fit: cover;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.3267682072829131) 0%, rgba(73,73,73,0.8141631652661064) 97%),
+    url("../../assets/images/contact_us_header.jpg");
+    background-size: cover;
   }
   .row {
     height: inherit;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 }
