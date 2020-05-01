@@ -20,11 +20,10 @@ export default function HomePage() {
       <Masthead setVisibleSection={(section) => { setVisibleSection(section); }} />
       <OurStorySection setVisibleSection={(section) => { setVisibleSection(section); }} />
       <CMACSection setVisibleSection={(section) => { setVisibleSection(section); }} />
-      <WhyYouShouldJoinSection setVisibleSection={(section) => { setVisibleSection(section); }} />
+      {/* <WhyYouShouldJoinSection setVisibleSection={(section) => { setVisibleSection(section); }} /> */}
       <OurInstructorsSections setVisibleSection={(section) => { setVisibleSection(section); }} />
       <TodaysScheduleSection setVisibleSection={(section) => { setVisibleSection(section); }} />
-                  {/* 
-      <ImageGallerySection setVisibleSection={(section) => { setVisibleSection(section); }} /> */}
+      <ImageGallerySection setVisibleSection={(section) => { setVisibleSection(section); }} />
     </>
   );
 }
