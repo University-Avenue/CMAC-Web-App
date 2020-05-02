@@ -4,7 +4,7 @@ class GalleryItemsController < ApplicationController
   # GET /gallery_items
   # GET /gallery_items.json
   def index
-    @gallery_items = GalleryItem.all
+    @gallery_items = GalleryItem.all.order(created_at: :desc).page params[:page]
   end
 
   # GET /gallery_items/1
