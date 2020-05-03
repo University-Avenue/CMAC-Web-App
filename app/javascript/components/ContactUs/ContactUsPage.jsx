@@ -1,10 +1,12 @@
 import React from 'react';
-import Masthead from './Masthead';
+import FloatingPanel from './FloatingPanel';
 
 export default function ContactUsPage() {
   return (
     <>
-      <Masthead />
+      <div className="contact-background">
+        <FloatingPanel />
+      </div>
     </>
   );
 }
