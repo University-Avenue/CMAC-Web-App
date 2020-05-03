@@ -3,7 +3,7 @@ import React from 'react';
 export default function ContactDetails() {
   return (
     <div className="contact-us-details">
-      <ul>
+      <ul id="details-list">
         <li className="sub-heading">
           <i className="fas fa-map-marker-alt" />
           Address

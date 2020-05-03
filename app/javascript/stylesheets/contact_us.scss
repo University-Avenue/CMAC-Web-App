@@ -32,10 +32,9 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      padding: 1rem;
+      padding: 3rem;
       background: $background-color;
       width: 70%;
-      height: 80%;
       margin: 10% 15%;
       border-radius: 10px;
       box-shadow: 10px 10px 55px 0px rgba(0,0,0,0.75);
@@ -52,6 +51,12 @@
       .contact-us-details {
         flex: 1;
         text-align: left;
+        margin-left: 1rem;
+
+        #details-list {
+          padding: 0;
+        }
+
         i {
           margin-right: 1rem;
         }
@@ -63,22 +68,27 @@
         .sub-heading {
           font-weight: lighter;
           font-size: large;
-          margin: 0.5rem 0;
+          padding-top: 1rem;
         }
+
         .info ul{
           padding: 0;
         }
+
         .hours {
           display: flex;
           align-content: space-between;
           flex-wrap: wrap;
+
           .hours-sub-heading{
             font-weight: bolder;
             flex-basis: 100%;
           }
+
           .hours-date {
             flex-basis: 66%;
           }
+
           .hours-time {
             flex-basis: 33%;
             text-align: right;
@@ -95,8 +105,10 @@
   flex-wrap: wrap;
   width: 50vw;
   margin: $header-height auto;
+
   form {
     width: 100%;
+
     label {
       font-weight: bold;
     }
@@ -117,9 +129,11 @@
       height: 10rem;
     }
   }
+
   .page-title {
     width: 100%;
   }
+
   .form-group {
     margin: 2rem 1rem;
   }
