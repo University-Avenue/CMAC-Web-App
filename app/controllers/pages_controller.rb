@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def contact_us
+    @contact = Contact.new
   end
 
   def home

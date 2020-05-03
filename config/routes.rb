@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :contacts, only:[:new, :create]
+  resources :contacts, only:[:new, :create], :path => 'contact_us'
   get 'contact_us' => 'pages#contact_us'
   get 'schedule' => 'pages#schedule'
   get 'profile' => 'pages#profile'
