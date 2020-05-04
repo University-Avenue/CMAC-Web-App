@@ -1,6 +1,6 @@
 import React from 'react';
-import Map from './Map';
 import ContactDetails from './ContactDetails';
+import MapContainer from './MapContainer';
 
 export default function FloatingPanel() {
   return (
@@ -8,7 +8,9 @@ export default function FloatingPanel() {
       <div className="heading">
         <h1> Contact Us </h1>
       </div>
-      <Map />
+      <div className="map-container">
+        <MapContainer />
+      </div>
       <ContactDetails />
     </div>
   );
