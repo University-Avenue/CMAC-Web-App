@@ -1,4 +1,4 @@
 class GalleryItem < ApplicationRecord
-  paginates_per 6
+  paginates_per 10
   has_one_attached :image
 end

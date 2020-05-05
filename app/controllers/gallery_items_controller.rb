@@ -37,6 +37,30 @@ class GalleryItemsController < ApplicationController
     end
   end
 
+  def upload
+    @images = params[:gallery_items]
+
+    failedUploads = Array.new
+
+    @images.each do |image|
+      @gallery_item = GalleryItem.new(:image => image)
+      if @gallery_item.save
+      else
+        failedUploads.push(image.original_filename)
+      end
+    end
+
+    if failedUploads.length > 0
+      respond_to do |format|
+        format.json { render json: failedUploads, status: :unprocessable_entity }
+      end
+    else
+      respond_to do |format|
+        format.json { head :ok, content_type: "application/json" }
+      end
+    end
+  end
+
   # PATCH/PUT /gallery_items/1
   # PATCH/PUT /gallery_items/1.json
   def update
@@ -69,6 +93,6 @@ class GalleryItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def gallery_item_params
-      params.require(:gallery_item).permit(:image)
+      params.permit(:gallery_items)
     end
 end

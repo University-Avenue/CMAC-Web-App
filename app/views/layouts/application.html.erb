@@ -11,14 +11,12 @@
   </head>
 
   <body>
-    <header id="page-header">
+    <header id="page-header" data-turbolinks="false">
     </header>
     <%= javascript_pack_tag 'index' %>
 
     <main id="page-content">
+       <%= yield %>
     </main>
-    <div class="container">
-    <%= yield %>
-    </div>
   </body>
 </html>

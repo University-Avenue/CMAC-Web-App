@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :gallery_items do 
     get '(page/:page)', action: :index, on: :collection, as: ''
   end
+  post 'gallery_items/upload', to: 'gallery_items#upload'
+
   get 'image_gallery/index'
   get 'image_gallery/show'
   get 'image_gallery/delete'
