@@ -3,6 +3,9 @@
 $label-font-color: #999;
 $input-font-color: #555;
 $input-border-color: #d9d9d9;
+$floating-panel-width: 81vw;
+$floating-panel-mobile-width: 87vw;
+$form-input-padding: 0.25rem;
 
 .contact-masthead {
   height: 33vh;
@@ -22,89 +25,113 @@ $input-border-color: #d9d9d9;
 }
 
 #contact-us {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 
-  .contact-background {
-    position: relative;
-    width: 100vw;
-    padding: 5rem 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(180deg, rgba(0,0,0,0.3267682072829131) 0%, rgba(73,73,73,0.8141631652661064) 97%),
-    url("../../assets/images/contact_us_header.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+  #contact-us-info {
+    display: block;
 
-    .floating-panel {
-      padding: 3vw;
+    .contact-background {
+      position: relative;
+      width: 100vw;
+      min-height: 70vh;
+      padding: 5rem 0;
       display: flex;
-      width: 81vw;
-      justify-content: space-between;
-      background: $background-color;
-      flex-wrap: wrap;
-      border-radius: 10px;
-      box-shadow: 10px 10px 55px 0 rgba(0,0,0,0.75);
+      justify-content: center;
+      align-items: center;
+      background-image: linear-gradient(180deg, rgba(0,0,0,0.3267682072829131) 0%, rgba(73,73,73,0.8141631652661064) 97%),
+      url("../../assets/images/contact_us_header.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
 
-      .heading {
-        flex-basis: 100%;
-        text-align: center;
-        padding: 1rem;
+      .floating-panel {
+        padding: 3vw;
+        display: flex;
+        width: $floating-panel-width;
+        justify-content: space-between;
+        background: $background-color;
+        flex-wrap: wrap;
+        border-radius: 10px;
+        box-shadow: 10px 10px 55px 0 rgba(0,0,0,0.75);
+
+        .heading {
+          flex-basis: 100%;
+          text-align: center;
+          padding: 1rem;
+        }
+        .map-container {
+          flex-basis: 50vw;
+          display: inline-block;
+          div {
+            position: relative !important;
+          }
+
+          @include media-breakpoint-down(md) {
+            flex-basis: $floating-panel-width;
+          }
+        }
+
+        .contact-us-details {
+          flex-basis: 21vw;
+          text-align: left;
+          margin-left: 1rem;
+
+          #details-list {
+            padding: 0;
+          }
+
+          i {
+            margin-right: 1rem;
+          }
+
+          li {
+            list-style-type: none;
+          }
+
+          .sub-heading {
+            font-weight: lighter;
+            font-size: large;
+            padding-top: 1rem;
+          }
+
+          .info ul{
+            padding: 0;
+          }
+
+          .hours {
+            display: flex;
+            align-content: space-between;
+            flex-wrap: wrap;
+
+            .hours-sub-heading{
+              font-weight: bolder;
+              flex-basis: 100%;
+            }
+
+            .hours-date {
+              flex-basis: 66%;
+            }
+
+            .hours-time {
+              flex-basis: 33%;
+              text-align: right;
+            }
+          }
+          @include media-breakpoint-down(md) {
+            flex-basis: auto;
+            margin-left: 0;
+          }
+        }
+
+        @include media-breakpoint-down(md) {
+          width: $floating-panel-mobile-width;
+        }
       }
-      .map-container {
-        flex-basis: 50vw;
-        display: inline-block;
-        div {
-          position: relative !important;
-        }
-      }
 
-      .contact-us-details {
-        flex-basis: 21vw;
-        text-align: left;
-        margin-left: 1rem;
-
-        #details-list {
-          padding: 0;
-        }
-
-        i {
-          margin-right: 1rem;
-        }
-
-        li {
-          list-style-type: none;
-        }
-
-        .sub-heading {
-          font-weight: lighter;
-          font-size: large;
-          padding-top: 1rem;
-        }
-
-        .info ul{
-          padding: 0;
-        }
-
-        .hours {
-          display: flex;
-          align-content: space-between;
-          flex-wrap: wrap;
-
-          .hours-sub-heading{
-            font-weight: bolder;
-            flex-basis: 100%;
-          }
-
-          .hours-date {
-            flex-basis: 66%;
-          }
-
-          .hours-time {
-            flex-basis: 33%;
-            text-align: right;
-          }
-        }
+      @include media-breakpoint-down(md) {
+        padding: 3rem 0;
       }
     }
   }
@@ -114,8 +141,9 @@ $input-border-color: #d9d9d9;
   padding-top: 2rem;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   width: 50vw;
-  margin: 0 auto 5rem auto;
 
   form {
     width: 100%;
@@ -124,19 +152,18 @@ $input-border-color: #d9d9d9;
       font-weight: lighter;
       color: $label-font-color;
       line-height: 1.5;
-      padding-left: 0.25rem;
+      padding-left: $form-input-padding;
       font-size: 15px;
-      margin: 2rem 1rem 0 1rem;
+      margin-top: 2rem
     }
 
     input {
       width: 100%;
       outline: 0;
-      margin: 0 1rem;
       height: 2rem;
       line-height: 1.2;
       padding-bottom: 0.5rem;
-      padding-left: 0.25rem;
+      padding-left: $form-input-padding;
       border-width: 0 0 1px;
       border-color: $input-border-color;
       color: $input-font-color;
@@ -145,10 +172,10 @@ $input-border-color: #d9d9d9;
 
     textarea {
       width: 100%;
-      margin: 0 1rem;
       border-width: 0 0 1px;
       border-color: $input-border-color;
       color: $input-font-color;
+      padding-left: $form-input-padding;
       font-size: 18px;
       height: 10rem;
     }
@@ -158,6 +185,7 @@ $input-border-color: #d9d9d9;
       margin: 2rem auto;
       width: 75%;
       transition: all 0.3s;
+      background-color: white;
       &:focus, &:hover {
         border-color: $primary-color;
         color: $primary-color;
@@ -165,12 +193,16 @@ $input-border-color: #d9d9d9;
     }
   }
 
-  .page-title {
-    width: 100%;
+  .form-title {
+    flex-basis: 100%;
   }
 
   label {
     text-align: left;
+  }
+
+  @include media-breakpoint-down(md) {
+    width: $floating-panel-mobile-width;
   }
 }
 

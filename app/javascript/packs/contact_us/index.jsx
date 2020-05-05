@@ -5,6 +5,6 @@ import ContactUsPage from '../../components/ContactUs/ContactUsPage';
 document.addEventListener('turbolinks:load', () => {
   ReactDOM.render(
     <ContactUsPage />,
-    document.getElementById('contact-us'),
+    document.getElementById('contact-us-info'),
   );
 });

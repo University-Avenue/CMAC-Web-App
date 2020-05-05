@@ -1,24 +1,26 @@
-<div id="contact-us"></div>
-<div class="contact-form">
-  <h2 class="page-title">Have any questions?</h2>
-  <%= form_for @contact do |f| %>
+<div id="contact-us">
+  <div id="contact-us-info"></div>
+  <div class="contact-form">
+    <h2 class="form-title">Have any questions?</h2>
+    <%= form_for @contact do |f| %>
 
-    <%= f.label :name%><br>
-    <%= f.text_field :name, required: true, placeholder: "Enter your name"%><br>
+      <%= f.label :name%><br>
+      <%= f.text_field :name, required: true, placeholder: "Enter your name"%><br>
 
-    <%= f.label :email %><br>
-    <%= f.email_field :email, required: true, placeholder: "Enter your email address"%><br>
+      <%= f.label :email %><br>
+      <%= f.email_field :email, required: true, placeholder: "Enter your email address"%><br>
 
-    <%= f.label :message %><br>
-    <%= f.text_area :message, as: :text, placeholder: "Your message here..."%><br>
+      <%= f.label :message %><br>
+      <%= f.text_area :message, as: :text, placeholder: "Your message here..."%><br>
 
-    <div class="hidden">
-      <%= f.label :nickname %><br>
-      <%= f.text_field :nickname, hint: 'leave this field blank'%>
-    </div>
+      <div class="hidden">
+        <%= f.label :nickname %><br>
+        <%= f.text_field :nickname, hint: 'leave this field blank'%>
+      </div>
 
-    <%= f.submit 'Send Message', class: "form-button" %>
-  <% end %>
+      <%= f.submit 'Send Message', class: "form-button" %>
+    <% end %>
+  </div>
 </div>
 <%= javascript_pack_tag 'contact_us/index' %>
 
