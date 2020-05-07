@@ -99,7 +99,7 @@ export default function ImageGalleryDropzone() {
       {imagesToUpload.length > 0
           && (
             <div className="upload-button-container">
-              <button type="button" className="CMAC-button" onClick={handleUpload}>
+              <button type="button" className="cmac-button" onClick={handleUpload}>
                 Upload
               </button>
             </div>
