@@ -8,7 +8,7 @@ export default function OurInstructorsSections() {
   const sensei = {
     name: 'Gregg Skoryk',
     rank: '7th Degree, Go Ju Ryu',
-    bio: 'Beginning his training with Shotokan Karate in 1980, Sensei Skoryk is currently a student of Go Ju Ryu under Hanshi Wallace Platt, 10th Deg.  Also a Weapons and Tai Chi Master, he has been teaching in Kitchener/Waterloo for over 30 years!  His experience includes countless competitions, demonstrations and training from around the world including the North and South Shaolin Temples of China.  In addition, he has received instruction from teachers such as Don Warrner, Sensei Chuck Merriman, Sensei Morio Higaonna, O\'Sensei Richard Kim and Sensei Peter Urban and many others',
+    bio: 'Beginning his training with Shotokan Karate in 1980, Sensei Skoryk is currently a student of Go Ju Ryu under Hanshi Wallace Platt, 10th Deg.  Also a Weapons and Tai Chi Master, he has been teaching in Kitchener/Waterloo for over 30 years!  His experience includes countless competitions, demonstrations and training from around the world including the North and South Shaolin Temples of China.  In addition, he has received instruction from teachers such as Don Warrner, Sensei Chuck Merriman, Sensei Morio Higaonna, O\'Sensei Richard Kim and Sensei Peter Urban and many others.',
     image: SenseiSkoryk,
   };
 

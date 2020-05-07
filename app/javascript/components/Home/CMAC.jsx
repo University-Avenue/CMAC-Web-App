@@ -1,5 +1,5 @@
 import React from 'react';
-import CMACLogo1 from '../../../assets/images/CMAC-logo-1.png';
+import CMACLogo from '../../../assets/images/CMAC-logo-1-2x.png';
 
 export default function CMACSection() {
   return (
@@ -12,7 +12,7 @@ export default function CMACSection() {
           <span className="top-left-gradient-corner" />
           <span className="bottom-right-gradient-corner" />
           <div className="home-page-section-image-container">
-            <img src={CMACLogo1} alt="" />
+            <img src={CMACLogo} alt="" />
           </div>
           <p>
             Our centre is a proud member of

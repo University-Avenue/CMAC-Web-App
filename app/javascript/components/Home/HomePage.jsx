@@ -7,6 +7,7 @@ import OurInstructorsSections from './OurInstructors';
 import TodaysScheduleSection from './TodaysSchedule';
 import ImageGallerySection from './ImageGallery';
 import DotNavigator from './DotNavigator';
+import Footer from './Footer';
 
 export default function HomePage() {
   const [visibleSection, setVisibleSection] = useState('ourStory');
@@ -17,14 +18,14 @@ export default function HomePage() {
         visibleSection={visibleSection}
         setVisibleSection={(section) => { setVisibleSection(section); }}
       />
-      <Masthead setVisibleSection={(section) => { setVisibleSection(section); }} />
-      <OurStorySection setVisibleSection={(section) => { setVisibleSection(section); }} />
-      <CMACSection setVisibleSection={(section) => { setVisibleSection(section); }} />
-      <WhyYouShouldJoinSection setVisibleSection={(section) => { setVisibleSection(section); }} />
-      <OurInstructorsSections setVisibleSection={(section) => { setVisibleSection(section); }} />
-      <TodaysScheduleSection setVisibleSection={(section) => { setVisibleSection(section); }} />
-                  {/* 
-      <ImageGallerySection setVisibleSection={(section) => { setVisibleSection(section); }} /> */}
+      <Masthead />
+      <OurStorySection />
+      <CMACSection />
+      {/* <WhyYouShouldJoinSection setVisibleSection={(section) => { setVisibleSection(section); }} /> */}
+      <OurInstructorsSections />
+      <TodaysScheduleSection />
+      <ImageGallerySection />
+      <Footer />
     </>
   );
 }

@@ -42,7 +42,7 @@ export default function DotNavigator(props) {
           </Link>
           <p className="dot-title">CMAC</p>
         </li>
-        <li className="dot-list-item">
+        {/* <li className="dot-list-item">
           <Link
             className="dot"
             to="why-you-should-join"
@@ -57,7 +57,7 @@ export default function DotNavigator(props) {
             </div>
           </Link>
           <p className="dot-title">Join</p>
-        </li>
+        </li> */}
         <li className="dot-list-item">
           <Link
             className="dot"

@@ -2,12 +2,10 @@
 
 // Homepage
 .masthead {
-  height: 100vh;
-  box-sizing: border-box;
+  height: calc(100vh - #{$header-height});
   background: $primary-gradient;
   background-position: center;
   background-size: cover;
-  padding-top: $header-height;
   .masthead-container {
     display: flex;
     flex-direction: column;
@@ -185,7 +183,7 @@
 @media only screen and (max-width: 900px) {
   .top-left-gradient-corner, .bottom-right-gradient-corner {
     width: 75px;
-    height: 75;
+    height: 75px;
   }
 }
 
@@ -200,6 +198,7 @@
   .home-page-section-content {
     width: 90vw;
     height: auto;
+    padding: 15px;
     .home-page-section-image-container {
       width: 100px;
       margin-bottom: 15px;
@@ -228,13 +227,109 @@
   }
 }
 
-@media only screen and (max-width: 320px) {
-  .top-left-gradient-corner, .bottom-right-gradient-corner {
-    width: 25px;
-    height: 25px;
+// Image gallery
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+  margin: 0;
+}
+
+.gallery-item {
+  height: 25vh;
+  width: 25vh;
+  margin: 3px;
+  button {
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s;
+    &:hover {
+      transform: scale(1.1);
+    }
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      vertical-align: bottom;
+    }
   }
 }
 
+.image-gallery-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1010;
+}
+
+.image-gallery-overlay-inner {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  height: 80vh;
+  .image-gallery-close-button-container {
+    display: flex;
+    justify-content: flex-end;
+    height: 40px;
+    .image-gallery-close-button {
+      color: white;
+      i {
+        font-size: 30px;
+      }
+    }
+  }
+  .image-gallery-overlay-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    figure {
+      height: 600px;
+      width: 600px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: scale-down;
+      }
+    }
+  }
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid $primary-color;
+  border-color: $primary-color transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+// Dot navigator
 .dot-navigator {
   position: fixed;
   width: 200px;

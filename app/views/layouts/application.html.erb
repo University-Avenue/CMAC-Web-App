@@ -5,18 +5,18 @@
     <title>CMACKWWebApplication</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/010d12112b.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <header id="page-header">
+    <header id="page-header" data-turbolinks="false">
     </header>
     <%= javascript_pack_tag 'index' %>
 
-    <main id="page-content"></main>
-
-    <%= yield %>
+    <main id="page-content">
+       <%= yield %>
+    </main>
   </body>
 </html>
