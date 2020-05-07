@@ -72,7 +72,7 @@ export default function ImageGallerySection() {
           && (
           <button
             type="button"
-            className="CMACButton"
+            className="cmac-button"
             onClick={() => { fetch(); }}
           >
             Load more
