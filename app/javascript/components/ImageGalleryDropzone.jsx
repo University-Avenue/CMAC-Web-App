@@ -1,12 +1,19 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import Axios from 'axios';
 import { useDropzone } from 'react-dropzone';
 
 export default function ImageGalleryDropzone() {
   const [imagesToUpload, setImagesToUpload] = useState([]);
+  const [uploadPercentage, setUploadPercentage] = useState(0);
+  const [failedImages, setFailedImages] = useState([]);
+  const [dropzoneDisabled, setDropzoneDisabled] = useState(false);
+
   useEffect(() => {
-    Axios.defaults.headers.common['X-CSRF-Token'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    const urlParams = new URLSearchParams(window.location.search).getAll('filename');
+    if (urlParams.length > 0) {
+      setFailedImages(urlParams);
+    }
   }, []);
 
   useEffect(() => () => {
@@ -23,39 +30,44 @@ export default function ImageGalleryDropzone() {
     const formData = new FormData();
 
     imagesToUpload.forEach((image) => {
-      formData.append('gallery_items[]', image);
+      formData.append('gallery_items[gallery_items][]gallery_item[image]', image);
     });
 
+    setDropzoneDisabled(true);
     Axios.post('/gallery_items/upload', formData, {
       headers: {
         // eslint-disable-next-line quote-props
         'Accept': 'application/json',
         'Content-Type': 'multipart/form-data',
+        'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
       },
       onUploadProgress: (progressEvent) => {
         const { loaded, total } = progressEvent;
+        const percent = Math.floor((loaded / total) * 100);
+        if (percent < 99) {
+          setUploadPercentage(percent);
+        }
       },
     }).then((response) => {
       if (response.status === 200) {
+        setUploadPercentage(100);
         window.location.reload(false);
-      } else if (response.status === 422) {
-
       }
+    }).catch((error) => {
+      const failedFileNames = error.response.data;
+      let url = '/gallery_items?';
+      failedFileNames.forEach((file, index) => {
+        if (index !== failedFileNames.length - 1) {
+          url += `filename=${file}&`;
+        } else {
+          url += `filename=${file}`;
+        }
+      });
+      window.location.href = url;
     });
   };
 
-  const { getRootProps, getInputProps } = useDropzone({
-    onDrop: (acceptedFiles) => {
-      const recentlyDroppedImages = acceptedFiles.map((file) => Object.assign(file, {
-        preview: URL.createObjectURL(file),
-      }));
-      setImagesToUpload(imagesToUpload.concat(recentlyDroppedImages));
-    },
-    multiple: true,
-    accept: 'image/jpeg, image/png',
-  });
-
-  const filesList = imagesToUpload.length > 0
+  const imagesList = imagesToUpload.length > 0
     ? imagesToUpload.map((image, index) => (
       <li key={image.path} className="upload-preview">
         <img src={image.preview} alt="" />
@@ -68,14 +80,21 @@ export default function ImageGalleryDropzone() {
       </li>
     )) : null;
 
-  return (
-    <div className="dropzone-container">
-      <div {...getRootProps({ className: 'dropzone' })}>
-        <input {...getInputProps()} />
-        <p>Drag and drop some images here, or click to select images</p>
-      </div>
+  const failedImagesList = (
+    <div style={{ color: 'red' }}>
+      <h6>The following files failed to upload. Please try to upload them again or contact the dev team if issue persists.</h6>
+      <ul style={{ marginBottom: 0 }}>
+        {failedImages.map((image) => (
+          <li key={image}>{image}</li>
+        ))}
+      </ul>
+    </div>
+  );
+
+  const uploadsPreview = (
+    <>
       <ul className="uploads-preview-container">
-        {filesList}
+        {imagesList}
       </ul>
       {imagesToUpload.length > 0
           && (
@@ -85,6 +104,56 @@ export default function ImageGalleryDropzone() {
               </button>
             </div>
           )}
+    </>
+  );
+
+  const progressBar = (
+    <div className="progress">
+      {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+      <div className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style={{ width: `${uploadPercentage}%` }} aria-valuenow={uploadPercentage} aria-valuemin="0" aria-valuemax="100" />
+    </div>
+  );
+
+  const {
+    getRootProps, getInputProps, isDragActive, isDragReject,
+  } = useDropzone({
+    onDrop: (acceptedFiles) => {
+      const recentlyDroppedImages = acceptedFiles.map((file) => Object.assign(file, {
+        preview: URL.createObjectURL(file),
+      }));
+      setImagesToUpload(imagesToUpload.concat(recentlyDroppedImages));
+    },
+    multiple: true,
+    accept: 'image/jpeg, image/png',
+    disabled: dropzoneDisabled,
+  });
+
+
+  const activeStyle = {
+    borderColor: '#2196f3',
+  };
+
+  const rejectStyle = {
+    borderColor: '#ff1744',
+  };
+
+  const style = useMemo(() => ({
+    ...(isDragActive ? activeStyle : {}),
+    ...(isDragReject ? rejectStyle : {}),
+  }), [
+    isDragActive,
+  ]);
+
+  return (
+    <div className="dropzone-container">
+      <div {...getRootProps({ className: 'dropzone', style })}>
+        <input {...getInputProps()} />
+        {uploadPercentage > 0
+          ? <p>Uploading...</p>
+          : <p>Drag and drop some images here, or click to select images</p> }
+      </div>
+      {failedImages.length > 0 && failedImagesList}
+      { uploadPercentage === 0 ? uploadsPreview : progressBar}
     </div>
   );
 }
