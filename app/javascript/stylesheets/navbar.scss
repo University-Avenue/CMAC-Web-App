@@ -31,7 +31,7 @@ nav {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  background-image: $primary-gradient;
+  background: $primary-gradient;
   height: inherit;
   transition: background-color 0.2s ease;
 
@@ -100,13 +100,9 @@ nav {
     justify-content: flex-start;
   }
 
-  &.navbar-home-page {
-    background: transparent;
-  }
-
   &.navbar-scrolled{
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    background-color: $nav-color;
+    background: $nav-color;
     .navbar-brand {
       color: $nav-text-dark-color;
     }

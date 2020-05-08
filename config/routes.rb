@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :gallery_items do 
+  resources :contacts, only:[:new, :create], :path => 'contact_us'
+  resources :gallery_items do
     get '(page/:page)', action: :index, on: :collection, as: ''
   end
   post 'gallery_items/upload', to: 'gallery_items#upload'
