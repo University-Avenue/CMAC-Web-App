@@ -16,6 +16,10 @@
 @import "contact_us";
 @import "navbar";
 @import "global";
+@import "image_gallery";
+@import "@fullcalendar/core/main.css";
+@import "@fullcalendar/daygrid/main.css";
+@import "@fullcalendar/timegrid/main.css";
 
 * {
   font-family: 'Avenir Next';
@@ -75,4 +79,30 @@ body {
   &:focus {
     outline: none;
   }
+}
+
+.cmac-button {
+  display: inline-block;
+  padding: 0.1em 1em;
+  border: 0.1em solid $primary-color;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 20px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 500;
+  color: $primary-color;
+  background-color: white;
+  text-align: center;
+  transition: all 0.2s;
+  &:hover {
+    color: white;
+    background-color: $primary-color;
+  }
+}
+
+.page-header-container {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
