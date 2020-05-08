@@ -135,6 +135,12 @@ $form-input-padding: 0.25rem;
       }
     }
   }
+
+  .alert {
+    position: absolute;
+    top: $header-height + 10;
+    z-index: 1000;
+  }
 }
 
 .contact-form {
