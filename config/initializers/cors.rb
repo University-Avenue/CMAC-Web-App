@@ -7,7 +7,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
               credentials: true
   end
 
-  # TODO: ALLOW DigitalOcean https here
+  # TODO: Allow DigitalOcean https here
   allow do
     origins "https://PLACE-HOLDER.DIGITALOCEAN.COM"
     resource "*",
