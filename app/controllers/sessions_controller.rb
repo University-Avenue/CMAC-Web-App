@@ -2,8 +2,10 @@ class SessionsController < ApplicationController
   include CurrentUserConcern
 
   def create
-    user = User
-               .find_by(email: params["user"]["email"])
+    # session fixation counter measure
+    reset_session
+
+    user = User.find_by(email: params["user"]["email"])
                .try(:authenticate, params["user"]["password"])
     if user
       session[:user_id] = user.id
