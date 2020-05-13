@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import EmailInput from './EmailInput';
+import PasswordInput from './PasswordInput';
+import PasswordConfirmationInput from './PasswordConfirmation';
 
-export default function Registration(props) {
+export default function Registration() {
   const [credentials, setCredentials] = useState({
     email: '',
     password: '',
@@ -36,35 +39,17 @@ export default function Registration(props) {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={credentials.email}
-          onChange={handleChange}
-          required
+    <div className="profile-container">
+      <div className="profile-heading">
+        <h1> Sign up! </h1>
+      </div>
+      <form onSubmit={handleSubmit} id="registration-form">
+        <EmailInput onChangeHandler={handleChange} email={credentials.email} />
+        <PasswordInput password={credentials.password} onChangeHandler={handleChange} />
+        <PasswordConfirmationInput
+          onChangeHandler={handleChange}
+          passwordConfirmation={credentials.password_confirmation}
         />
-
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={credentials.password}
-          onChange={handleChange}
-          required
-        />
-
-        <input
-          type="password"
-          name="password_confirmation"
-          placeholder="Password confirmation"
-          value={credentials.password_confirmation}
-          onChange={handleChange}
-          required
-        />
-
         <button type="submit">Register</button>
       </form>
     </div>
