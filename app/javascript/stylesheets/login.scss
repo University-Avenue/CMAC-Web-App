@@ -1,0 +1,53 @@
+@import "global";
+
+
+.login-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  padding-top: 2rem;
+
+  .login-heading {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .form-container {
+    width: 66vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    #registration-form, #login-form {
+      display: flex;
+      flex: 1 1 100%;
+      flex-wrap: wrap;
+      width: inherit;
+      justify-content: center;
+
+      input {
+        flex: 1 1;
+        width: 50%;
+        margin: 1rem;
+      }
+    }
+
+    .sign-up-container {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-wrap: wrap;
+
+      .sign-up-item {
+        flex: 1 1 100%;
+        text-align: center;
+
+        span::before {
+          content: "\A";
+          white-space: pre;
+        }
+      }
+    }
+  }
+}

@@ -39,8 +39,8 @@ export default function Registration() {
   };
 
   return (
-    <div className="profile-container">
-      <div className="profile-heading">
+    <div className="login-container">
+      <div className="login-heading">
         <h1> Sign up! </h1>
       </div>
       <form onSubmit={handleSubmit} id="registration-form">

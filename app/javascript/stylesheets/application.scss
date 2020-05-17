@@ -17,13 +17,14 @@
 @import "navbar";
 @import "global";
 @import "image_gallery";
-@import "profile";
+@import "login";
 @import "@fullcalendar/core/main.css";
 @import "@fullcalendar/daygrid/main.css";
 @import "@fullcalendar/timegrid/main.css";
 
 * {
   font-family: 'Avenir Next';
+  font-weight: $font-weight-base;
 }
 
 body {
@@ -32,6 +33,39 @@ body {
   margin: 0px;
 }
 
+label {
+  font-weight: lighter;
+  color: $label-font-color;
+  line-height: 1.5;
+  padding-left: $form-input-padding;
+  font-size: 15px;
+  margin-top: 2rem
+}
+
+input {
+  width: 100%;
+  outline: 0;
+  height: 2rem;
+  line-height: 1.2;
+  padding-bottom: 0.5rem;
+  padding-left: $form-input-padding;
+  border-width: 0 0 1px;
+  border-color: $input-border-color;
+  color: $input-font-color;
+  font-size: 18px;
+}
+
+textarea {
+  width: 100%;
+  border-width: 0 0 1px;
+  border-color: $input-border-color;
+  color: $input-font-color;
+  padding-left: $form-input-padding;
+  font-size: 18px;
+  height: 10rem;
+}
+
+// Pages
 #page-header {
   position: fixed;
   top: 0;
@@ -41,6 +75,13 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 9999;
+}
+
+.page-header-container {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // Miscellaneous
@@ -101,9 +142,12 @@ body {
   }
 }
 
-.page-header-container {
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.cmac-link {
+  color: $primary-color;
+  text-decoration: none;
+  font-weight: $font-weight-base - 100;
+  &:hover, &:focus {
+    text-decoration: none;
+    color: $primary-color;
+  }
 }

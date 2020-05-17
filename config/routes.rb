@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create]
   delete :logout, to: "sessions#logout"
   get :logged_in, to: "sessions#logged_in"
+  post 'login_user' => "sessions#create"
 
   resources :registrations, only: [:create]
   resources :contacts, only:[:new, :create], :path => 'contact_us'
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
   get 'schedule' => 'pages#schedule'
   get 'profile' => 'pages#profile'
   get 'train' => 'pages#train'
+  get 'login' => 'pages#login'
 
   root 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

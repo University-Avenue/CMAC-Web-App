@@ -1,17 +1,23 @@
 import React from 'react';
 import useLoginStatus from '../../hooks/useLoginStatus';
-import LogoutButton from '../Auth/LogoutButton';
-import Registration from './Registration';
-import Login from './Login';
+import Login from '../Login/Login';
 
 export default function ProfilePage() {
   const isLoggedIn = useLoginStatus();
-  console.log("isLoggedIn", isLoggedIn);
 
   return (
     <div>
-      <Registration />
-      <Login />
+      <h1>
+        The user is
+        {' '}
+        <b>
+          {' '}
+          {isLoggedIn ? 'currently' : 'not'}
+          {' '}
+        </b>
+        {' '}
+        logged in.
+      </h1>
     </div>
   );
 }

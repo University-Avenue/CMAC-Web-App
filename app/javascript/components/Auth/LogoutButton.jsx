@@ -8,6 +8,6 @@ export default function LogoutButton() {
       .catch((error) => { console.log(error); });
   };
   return (
-    <button type="submit" onClick={logout}>Log Out</button>
+    <button type="submit" className="logout-button" onClick={logout}>Log Out</button>
   );
 }

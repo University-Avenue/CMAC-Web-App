@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import CMACLogo2 from '../../../assets/images/CMAC-logo-2.png';
+import useLoginStatus from '../../hooks/useLoginStatus';
+import LogoutButton from '../Auth/LogoutButton';
+import LogoutNavItem from './LogoutNavItem';
+import LoginNavItem from './LoginNavItem';
 
 function DesktopNav() {
   const [scrolled, setScrolled] = useState('');
@@ -22,6 +26,7 @@ function DesktopNav() {
       return () => window.removeEventListener('scroll', listenToScroll);
     }, []);
   }
+  const isLoggedIn = useLoginStatus();
 
   return (
     <nav className={`navbar navbar-expand-lg navbar-light fixed-top ${scrolled} ${isHomePage}`}>
@@ -48,11 +53,7 @@ function DesktopNav() {
         <li className="nav-item">
           <a className="nav-link" href="/contact_us">Contact us</a>
         </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/profile">
-            <i className="fas fa-user" />
-          </a>
-        </li>
+        {isLoggedIn ? <LogoutNavItem /> : <LoginNavItem />}
       </ul>
     </nav>
   );
