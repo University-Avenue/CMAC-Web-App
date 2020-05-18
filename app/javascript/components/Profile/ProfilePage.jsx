@@ -1,6 +1,5 @@
 import React from 'react';
 import useLoginStatus from '../../hooks/useLoginStatus';
-import Login from '../Login/Login';
 
 export default function ProfilePage() {
   const isLoggedIn = useLoginStatus();

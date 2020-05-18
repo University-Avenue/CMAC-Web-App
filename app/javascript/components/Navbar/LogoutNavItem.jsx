@@ -6,7 +6,7 @@ export default function LogoutNavItem() {
     <li className="nav-item">
       <div className="logout-container">
         <a className="nav-link" href="/profile">
-          <i className="fas fa-user" />
+          Profile
         </a>
         <LogoutButton />
       </div>
