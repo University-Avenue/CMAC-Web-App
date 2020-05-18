@@ -23,7 +23,9 @@
       display: flex;
       flex: 1 1 100%;
       flex-wrap: wrap;
+      flex-direction: column;
       width: inherit;
+      align-content: center;
       justify-content: center;
 
       input {
