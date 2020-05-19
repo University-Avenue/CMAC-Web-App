@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :registrations, only: [:create]
   resources :contacts, only:[:new, :create], :path => 'contact_us'
+  resource  :password_resets
 
   resources :gallery_items do
     get '(page/:page)', action: :index, on: :collection, as: ''
@@ -21,6 +22,6 @@ Rails.application.routes.draw do
   get 'train' => 'pages#train'
   get 'login' => 'pages#login'
 
-  root 'pages#home'
+  root :to => 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

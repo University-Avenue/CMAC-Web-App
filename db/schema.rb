@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2020_05_08_201421) do
   create_table "users", id: :string, force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
+    t.string "password_reset_token"
+    t.datetime "password_reset_sent_at", precision: 6
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

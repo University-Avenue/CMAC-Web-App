@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import EmailInput from '../Profile/EmailInput';
-import PasswordInput from '../Profile/PasswordInput';
+import EmailInput from './EmailInput';
+import PasswordInput from './PasswordInput';
 
 export default function Login() {
   const [credentials, setCredentials] = useState({

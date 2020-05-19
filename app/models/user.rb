@@ -6,6 +6,13 @@ class User < ApplicationRecord
 
   before_create { create_auth_token(:id) }
 
+  def send_password_reset
+    create_auth_token(:password_reset_token)
+    self.password_reset_sent_at = Time.zone.now
+    save!
+    UserMailer.password_reset(self).deliver
+  end
+
   private
     def create_auth_token(column)
       begin
