@@ -8,7 +8,6 @@ export default function LogoutButton() {
         if (response.status === 200) {
           window.location.href = '/';
         }
-        console.log(response);
       })
       .catch((error) => { console.log(error); });
   };

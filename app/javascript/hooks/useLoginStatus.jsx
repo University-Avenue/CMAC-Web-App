@@ -6,10 +6,7 @@ export default function useLoginStatus(setIsLoggedIn) {
 
   axios.get('http://localhost:3000/logged_in', { withCredentials: true })
     .then((response) => {
-      console.log(response.data.logged_in);
       setIsLoggedIn(response.data.logged_in);
     })
-    .catch((error) => console.log(error));
-
-  // return isLoggedIn;
+    .catch(setIsLoggedIn(false));
 }

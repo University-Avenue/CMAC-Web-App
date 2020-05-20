@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import EmailInput from './EmailInput';
 import PasswordInput from './PasswordInput';
+import ErrorMessage from './ErrorMessage';
 
 export default function Login() {
   const [credentials, setCredentials] = useState({
     email: '',
     password: '',
+    errorMessage: '',
   });
 
   const handleSubmit = (event) => {
@@ -21,12 +23,11 @@ export default function Login() {
         password,
       },
     },
-    { withCredentials: true }).then((response) => {
-      if (response.status === 200) {
-        window.location.href = '/';
-      }
+    { withCredentials: true }).then(() => {
+      window.location.href = '/';
     }).catch((error) => {
-      console.log('login error', error);
+      console.log(error.response.data.message);
+      setCredentials({ ...credentials, errorMessage: error.response.data.message });
     });
     event.preventDefault();
   };
@@ -38,6 +39,7 @@ export default function Login() {
 
   return (
     <div className="login-container">
+      <ErrorMessage message={credentials.errorMessage} />
       <div className="login-heading">
         <h1> Login </h1>
       </div>
