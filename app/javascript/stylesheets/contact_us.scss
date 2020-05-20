@@ -1,8 +1,5 @@
 @import "global";
 
-$label-font-color: #999;
-$input-font-color: #555;
-$input-border-color: #d9d9d9;
 $floating-panel-width: 81vw;
 $floating-panel-mobile-width: 87vw;
 $form-input-padding: 0.25rem;
@@ -144,7 +141,7 @@ $form-input-padding: 0.25rem;
 }
 
 .contact-form {
-  padding-top: 2rem;
+  padding: 2rem 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -153,6 +150,15 @@ $form-input-padding: 0.25rem;
 
   form {
     width: 100%;
+
+    label {
+      font-weight: normal;
+      color: $label-font-color;
+      line-height: 1.5;
+      padding-left: $form-input-padding;
+      font-size: 15px;
+      margin-top: 2rem
+    }
 
     .form-button {
       display: block;

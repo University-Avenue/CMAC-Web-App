@@ -29,6 +29,6 @@ class SessionsController < ApplicationController
 
   def logout
     reset_session
-    render json: {logged_out: true }, status: 200
+    render json: {logged_out: true }, status: :ok
   end
 end

@@ -3,14 +3,18 @@ import PropTypes from 'prop-types';
 
 export default function PasswordConfirmationInput({ passwordConfirmation, onChangeHandler }) {
   return (
-    <input
-      type="password"
-      name="password_confirmation"
-      placeholder="Password confirmation"
-      value={passwordConfirmation}
-      onChange={onChangeHandler}
-      required
-    />
+    <div className="input-wrapper">
+      <input
+        className="input-text"
+        type="password"
+        name="password_confirmation"
+        placeholder="Password confirmation"
+        value={passwordConfirmation}
+        onChange={onChangeHandler}
+        required
+      />
+      <span className="focus-input" />
+    </div>
   );
 }
 

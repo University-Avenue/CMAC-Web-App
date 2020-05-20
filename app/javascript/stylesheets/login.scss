@@ -1,62 +1,105 @@
 @import "global";
 
+$backdrop-width: 60vw;
+$login-form-color: #f7f7f7;
 
-.login-container {
+.login-page{
   display: flex;
-  flex-wrap: wrap;
   width: 100%;
-  justify-content: center;
-  padding-top: 2rem;
+  height: calc(100vh - #{$header-height});
 
-  .login-heading {
-    flex: 1 1 100%;
-    text-align: center;
+  .login-backdrop {
+    flex: 0 0 $backdrop-width;
+    height: 100%;
+    width: $backdrop-width;
+    background-image: url("../../assets/images/login-backdrop.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
   }
 
-  .form-container {
-    width: 66vw;
+  .login-form-container {
+    flex: 0 0  100 - $backdrop-width;
+    height: inherit;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    text-align: center;
+    flex-direction: column;
+    padding: 10rem 4rem;
+    background-color: $login-form-color;
 
-    #registration-form, #login-form {
-      display: flex;
-      flex: 1 1 100%;
-      flex-wrap: wrap;
-      flex-direction: column;
-      width: inherit;
-      align-content: center;
-      justify-content: center;
-
-      input {
-        flex: 1 1;
-        width: 50%;
-        margin: 1rem;
-      }
+    .login-heading {
+      line-height: 1.2;
+      padding-bottom: 1rem;
+      text-align: center;
     }
 
-    .forgot-password-link {
-      width: inherit;
-      font-size: small;
-      margin: 1rem;
-    }
-
-    .sign-up-container {
+    .form-wrapper {
       display: flex;
       justify-content: center;
-      align-content: center;
       flex-wrap: wrap;
+      text-align: center;
 
-      .sign-up-item {
-        flex: 1 1 100%;
-        text-align: center;
+      #login-form {
+        display: flex;
+        flex: 0 0 100%;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: inherit;
+        align-content: center;
+        justify-content: center;
 
-        span::before {
-          content: "\A";
-          white-space: pre;
+        .form-options {
+          display: flex;
+          justify-content: space-between;
+          align-content: center;
+          font-size: 13px;
+          line-height: 1.4;
+          padding-bottom: 2rem;
+
+          label {
+            color: $input-font-color;
+          }
+
+          #remember-me {
+            margin-right: 0.5rem;
+          }
         }
       }
+
+      .sign-up-container {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+        padding: 3rem 0;
+
+        .sign-up-item {
+          flex: 1 1 100%;
+          text-align: center;
+
+          span::before {
+            content: "\A";
+            white-space: pre;
+          }
+
+          @include media-breakpoint-down(md) {
+            span {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      flex: 0 0 100vw;
+      padding: 4rem 1rem;
     }
   }
 }

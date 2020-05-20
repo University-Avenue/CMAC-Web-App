@@ -1,12 +1,11 @@
 import React from 'react';
-import Login from './Login';
-import Registration from './Registration';
+import LoginForm from './LoginForm';
 
 export default function LoginPage() {
   return (
-    <div>
-      <Login />
-      <Registration />
+    <div className="login-page">
+      <div className="login-backdrop" />
+      <LoginForm />
     </div>
   );
 }

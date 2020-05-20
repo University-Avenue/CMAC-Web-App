@@ -9,20 +9,28 @@
   <div class="contact-form">
     <h2 class="form-title">Have any questions?</h2>
     <%= form_with model: @contact do |f| %>
+
       <%= f.label :name%><br>
-      <%= f.text_field :name, required: true, placeholder: "Enter your name"%><br>
+      <div class="input-wrapper">
+        <%= f.text_field :name, required: true, placeholder: "Enter your name", class: "input-text"%>
+        <span class="focus-input" />
+      </div>
 
       <%= f.label :email %><br>
-      <%= f.email_field :email, required: true, placeholder: "Enter your email address"%><br>
+      <div class="input-wrapper">
+        <%= f.email_field :email, required: true, placeholder: "Enter your email address", class: "input-text"%>
+        <span class="focus-input" />
+      </div>
 
       <%= f.label :message %><br>
       <%= f.text_area :message, as: :text, placeholder: "Your message here..."%><br>
+      <span class="focus-input" />
 
       <div class="hidden">
         <%= f.label :nickname %><br>
         <%= f.text_field :nickname, hint: 'leave this field blank'%>
       </div>
-      <%= f.submit 'Send Message', class: "form-button" %>
+      <%= f.submit 'Send Message', class: "cmac-button" %>
     <% end %>
   </div>
 </div>

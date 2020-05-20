@@ -3,14 +3,18 @@ import PropTypes from 'prop-types';
 
 export default function EmailInput({ email, onChangeHandler }) {
   return (
-    <input
-      type="email"
-      name="email"
-      placeholder="Email"
-      value={email}
-      onChange={onChangeHandler}
-      required
-    />
+    <div className="input-wrapper">
+      <input
+        className="input-text"
+        type="email"
+        name="email"
+        placeholder="Email"
+        value={email}
+        onChange={onChangeHandler}
+        required
+      />
+      <span className="focus-input" />
+    </div>
   );
 }
 
