@@ -8,10 +8,9 @@ export default function LogoutButton() {
       .catch((error) => { console.log(error); });
   };
   return (
-    <button type="submit" className="logout-button" onClick={logout}>
-      <i
-        className="fas fa-sign-out-alt"
-      />
-    </button>
+
+    <a className="nav-link" href="/" onSubmit={logout}>
+      <i className="fas fa-sign-in-alt" />
+    </a>
   );
 }

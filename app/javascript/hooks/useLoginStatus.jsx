@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-export default function useLoginStatus() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+export default function useLoginStatus(setIsLoggedIn) {
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   axios.get('http://localhost:3000/logged_in', { withCredentials: true })
     .then((response) => {
@@ -11,5 +11,5 @@ export default function useLoginStatus() {
     })
     .catch((error) => console.log(error));
 
-  return isLoggedIn;
+  // return isLoggedIn;
 }

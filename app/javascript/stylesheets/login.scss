@@ -18,6 +18,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    text-align: center;
 
     #registration-form, #login-form {
       display: flex;
@@ -33,6 +34,12 @@
         width: 50%;
         margin: 1rem;
       }
+    }
+
+    .forgot-password-link {
+      width: inherit;
+      font-size: small;
+      margin: 1rem;
     }
 
     .sign-up-container {

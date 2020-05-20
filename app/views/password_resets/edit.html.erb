@@ -1,11 +1,13 @@
 <h2> Reset Password</h2>
 
-<%=  form_with model: @user, :url => password_resets_path(params[:password_reset_token]) do |f|%>
+<%=  form_with model: @user, :url => password_resets_path do |f|%>
   <%= f.label :password, required: true, placeholder: "Enter your new password here" %>
   <%= f.password_field :password %>
 
   <%= f.label :password_confirmation, required: true, placeholder: "Confirm your new password", pattern: :password %>
   <%= f.password_field :password_confirmation %>
+
+  <%= f.hidden_field :password_reset_token, :value => @user.password_reset_token %>
 
   <%= f.submit 'Update Password', class: "form-button" %>
 <% end %>

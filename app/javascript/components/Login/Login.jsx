@@ -22,7 +22,9 @@ export default function Login() {
       },
     },
     { withCredentials: true }).then((response) => {
-      console.log('login response', response);
+      if (response.status === 200) {
+        window.location.href = '/';
+      }
     }).catch((error) => {
       console.log('login error', error);
     });
@@ -45,6 +47,7 @@ export default function Login() {
           <PasswordInput password={credentials.password} onChangeHandler={handleChange} />
           <button type="submit" className="cmac-button">Login</button>
         </form>
+        <a className="forgot-password-link cmac-link" href="/password_resets/new">Forgot Password?</a>
         <div className="sign-up-container">
           <h5 className="sign-up-item"> Not a member? </h5>
           <h6 className="sign-up-item">
