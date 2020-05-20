@@ -19,12 +19,11 @@ class SessionsController < ApplicationController
     if @current_user
       render json: {
           logged_in: true,
-          user: @current_user
-      }
+      }, :status => :ok
     else
       render json: {
           logged_in: false
-      }
+      }, :status => :ok
     end
   end
 

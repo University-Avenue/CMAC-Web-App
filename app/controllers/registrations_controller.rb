@@ -11,9 +11,9 @@ class RegistrationsController < ApplicationController
       render json: {
           status: :created,
           user: user
-      }
+      }, :status => :ok
     else
-      render json: { status: 500 }
+      render json: { message: "Invalid credentials" }, :status => :bad_request
     end
   end
 end
