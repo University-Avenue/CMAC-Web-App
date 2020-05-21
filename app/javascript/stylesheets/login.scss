@@ -30,12 +30,24 @@ $login-form-color: #f7f7f7;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    padding: 10rem 4rem;
+    padding: 10rem 4rem 0 4rem;
     background-color: $login-form-color;
+    justify-content: center;
+
+    .alert-dismissible {
+      margin-bottom: 0;
+      visibility: visible;
+      &.alert-hidden {
+        visibility: hidden;
+      }
+    }
 
     .login-heading {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
       line-height: 1.2;
-      padding-bottom: 1rem;
+      padding: 1rem 0;
       text-align: center;
     }
 
@@ -68,6 +80,13 @@ $login-form-color: #f7f7f7;
 
           #remember-me {
             margin-right: 0.5rem;
+          }
+        }
+
+        @include media-breakpoint-up(sm) {
+          .login-button {
+            margin: 0 auto;
+            width: 50%;
           }
         }
       }

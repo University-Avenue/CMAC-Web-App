@@ -26,7 +26,6 @@ export default function LoginForm() {
     { withCredentials: true }).then(() => {
       window.location.href = '/';
     }).catch((error) => {
-      console.log(error.response.data.message);
       setCredentials({ ...credentials, errorMessage: error.response.data.message });
     });
     event.preventDefault();
@@ -41,7 +40,7 @@ export default function LoginForm() {
     <div className="login-form-container">
       <ErrorMessage message={credentials.errorMessage} />
       <div className="login-heading">
-        <h1> Login</h1>
+        <h1>Login</h1>
       </div>
       <div className="form-wrapper">
         <form onSubmit={handleSubmit} id="login-form">
@@ -54,7 +53,7 @@ export default function LoginForm() {
             </label>
             <a className="forgot-password-link cmac-link" href="/password_resets/new">Forgot Password?</a>
           </div>
-          <button type="submit" className="cmac-button">Login</button>
+          <button type="submit" className="cmac-button login-button">Login</button>
         </form>
         <div className="sign-up-container">
           <h5 className="sign-up-item"> Not a member? </h5>
