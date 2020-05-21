@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   resources :registrations, only: [:create]
   resources :contacts, only:[:new, :create], :path => 'contact_us'
-  resource  :password_resets
+  resource  :password_resets, only:[:new, :create, :edit, :update]
+  get 'password_reset' =>'password_resets#new'
 
   resources :gallery_items do
     get '(page/:page)', action: :index, on: :collection, as: ''

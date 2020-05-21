@@ -16,11 +16,7 @@
         <span class="focus-input" />
       </div>
 
-      <%= f.label :email %><br>
-      <div class="input-wrapper">
-        <%= f.email_field :email, required: true, placeholder: "Enter your email address", class: "input-text"%>
-        <span class="focus-input" />
-      </div>
+      <%= render partial: 'shared/email_input', locals: { :f => f} %>
 
       <%= f.label :message %><br>
       <%= f.text_area :message, as: :text, placeholder: "Your message here..."%><br>
@@ -30,7 +26,7 @@
         <%= f.label :nickname %><br>
         <%= f.text_field :nickname, hint: 'leave this field blank'%>
       </div>
-      <%= f.submit 'Send Message', class: "cmac-button" %>
+      <%= render partial: 'shared/submit_button', locals: { :f => f, :text => "Send Message" } %>
     <% end %>
   </div>
 </div>

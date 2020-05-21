@@ -104,6 +104,15 @@ textarea {
   }
 }
 
+label {
+  font-weight: normal;
+  color: $label-font-color;
+  line-height: 1.5;
+  padding-left: $form-input-padding;
+  font-size: 15px;
+  margin-top: 2rem
+}
+
 // Pages
 #page-header {
   position: fixed;
@@ -196,5 +205,22 @@ textarea {
   &:hover, &:focus {
     text-decoration: none;
     color: $primary-color;
+  }
+}
+
+.floating-panel {
+  padding: 3vw;
+  display: flex;
+  width: $floating-panel-width;
+  justify-content: space-between;
+  background: $background-color;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  box-shadow: 10px 10px 55px 0 rgba(0, 0, 0, 0.75);
+
+  .heading {
+    flex-basis: 100%;
+    text-align: center;
+    padding: 0 1rem 1rem;
   }
 }

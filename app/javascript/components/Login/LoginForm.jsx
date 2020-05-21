@@ -51,7 +51,7 @@ export default function LoginForm() {
               <input type="checkbox" name="remember-me" id="remember-me" />
               Remember Me
             </label>
-            <a className="forgot-password-link cmac-link" href="/password_resets/new">Forgot Password?</a>
+            <a className="forgot-password-link cmac-link" href="/password_reset">Forgot Password?</a>
           </div>
           <button type="submit" className="cmac-button login-button">Login</button>
         </form>
