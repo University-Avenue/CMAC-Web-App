@@ -19,8 +19,10 @@
       <%= render partial: 'shared/email_input', locals: { :f => f} %>
 
       <%= f.label :message %><br>
-      <%= f.text_area :message, as: :text, placeholder: "Your message here..."%><br>
-      <span class="focus-input" />
+      <div class="textarea-wrapper">
+        <%= f.text_area :message, as: :text, placeholder: "Your message here..."%>
+        <span class="focus-textarea" />
+      </div>
 
       <div class="hidden">
         <%= f.label :nickname %><br>
