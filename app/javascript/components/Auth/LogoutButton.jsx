@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export default function LogoutButton() {
   const logout = () => {
-    axios.delete('http://localhost:3000/logout', { withCredentials: true })
+    axios.delete('/logout', { withCredentials: true })
       .then((response) => {
         if (response.status === 200) {
           window.location.href = '/';

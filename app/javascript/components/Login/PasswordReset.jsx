@@ -9,7 +9,7 @@ export default function PasswordReset() {
     setEmail(event.target.value);
   };
   const handleSubmit = (event) => {
-    axios.post('http://localhost:3000/password_resets', { email })
+    axios.post('/password_resets', { email })
       .then(() => { console.log('Email sent'); })
       .catch((error) => { console.log(error); });
     event.preventDefault();

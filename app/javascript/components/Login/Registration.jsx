@@ -18,7 +18,7 @@ export default function Registration() {
       passwordConfirmation,
     } = credentials;
 
-    axios.post('http://localhost:3000/registrations', {
+    axios.post('/registrations', {
       user: {
         email,
         password,
