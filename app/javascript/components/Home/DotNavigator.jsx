@@ -22,7 +22,7 @@ export default function DotNavigator(props) {
               </span>
             </div>
           </Link>
-          <p className="dot-title">Our Story</p>
+          {/* <p className="dot-title">Our Story</p> */}
         </li>
         <li className="dot-list-item">
           <Link
@@ -40,7 +40,7 @@ export default function DotNavigator(props) {
               </span>
             </div>
           </Link>
-          <p className="dot-title">CMAC</p>
+          {/* <p className="dot-title">CMAC</p> */}
         </li>
         {/* <li className="dot-list-item">
           <Link
@@ -72,7 +72,7 @@ export default function DotNavigator(props) {
               </span>
             </div>
           </Link>
-          <p className="dot-title">Our Instructors</p>
+          {/* <p className="dot-title">Our Instructors</p> */}
         </li>
         <li className="dot-list-item">
           <Link
@@ -88,7 +88,7 @@ export default function DotNavigator(props) {
               </span>
             </div>
           </Link>
-          <p className="dot-title">Today&apos;s Schedule</p>
+          {/* <p className="dot-title">Today&apos;s Schedule</p> */}
         </li>
         <li className="dot-list-item">
           <Link
@@ -104,7 +104,7 @@ export default function DotNavigator(props) {
               </span>
             </div>
           </Link>
-          <p className="dot-title">Image Gallery</p>
+          {/* <p className="dot-title">Image Gallery</p> */}
         </li>
       </ul>
     </div>

@@ -354,9 +354,9 @@
       display: block;
       position: relative;
       cursor: pointer;
-      &:hover + .dot-title{
-        display: block;
-      }
+      // &:hover + .dot-title{
+      //   display: block;
+      // }
       .circle-container {
         float: left;
         width: 20px;
