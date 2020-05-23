@@ -7,6 +7,7 @@ export function MapContainer(props) {
     position: 'relative',
     width: '100%',
     height: '350px',
+    minHeight: '350px',
   };
 
   const { google } = props;

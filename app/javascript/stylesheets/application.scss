@@ -228,6 +228,10 @@ label {
   text-decoration: none;
   font-weight: $font-weight-base - 100;
 
+  * {
+    font-weight: $font-weight-base - 100;
+  }
+
   &:hover, &:focus {
     text-decoration: none;
     color: $primary-color;

@@ -5,6 +5,7 @@ $form-input-padding: 0.25rem;
 .contact-masthead {
   height: 33vh;
   width: 100%;
+
   .container {
     height: 100%;
     max-width:100%;
@@ -14,6 +15,7 @@ $form-input-padding: 0.25rem;
     url("../../assets/images/contact_us_header.jpg");
     background-size: cover;
   }
+
   .row {
     height: inherit;
   }
@@ -43,8 +45,10 @@ $form-input-padding: 0.25rem;
 
       .floating-panel {
         .map-container {
+          min-height: 350px;
           flex-basis: 50vw;
           display: inline-block;
+
           div {
             position: relative !important;
           }
