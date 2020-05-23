@@ -8,6 +8,8 @@ $nav-text-dark-color: #212529;
 $nav-text-dark-hover-color: rgba(244,92,67,1);
 $nav-border-color: #e9ecef;
 $nav-disabled-color: #6c757d;
+$font-weight: 700;
+$font-size: 0.9rem;
 
 nav {
   height: inherit;
@@ -49,7 +51,7 @@ nav {
     font-size: 1.25rem;
     line-height: inherit;
     white-space: nowrap;
-    font-weight: 700;
+    font-weight: $font-weight;
     font-kerning: normal;
     color: $nav-text-light-color;
     &:hover, &:focus {
@@ -73,9 +75,9 @@ nav {
       display: block;
       padding: 0 1rem;
       color: $nav-text-light-color;
-      font-weight: 700;
+      font-weight: $font-weight;
       font-kerning: normal;
-      font-size: 0.9rem;
+      font-size: $font-size;
 
       &:hover, &:focus {
         text-decoration: none;
@@ -90,6 +92,23 @@ nav {
         color: $nav-disabled-color;
         pointer-events: none;
         cursor: default;
+      }
+    }
+
+    .logout-container {
+      display: flex;
+    }
+
+    .logout-button {
+      border: none;
+      background: none;
+      color: $nav-text-light-color;
+      font-weight: $font-weight;
+      font-size: $font-size;
+
+      &:hover, &:focus {
+        text-decoration: none;
+        color: $nav-text-dark-color;
       }
     }
   }

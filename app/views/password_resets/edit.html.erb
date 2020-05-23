@@ -1,0 +1,11 @@
+<%= render :layout => 'shared/form', locals: { :heading => "Set Password"} do %>
+  <%=  form_with model: @user, :url => password_resets_path, :class => "forgot-pass-form" do |f|%>
+
+      <%= render partial: 'shared/password_input', locals: { :f => f } %>
+      <%= render partial: 'shared/password_input_confirmation', locals: { :f => f } %>
+
+      <%= f.hidden_field :password_reset_token,
+                         :value => @user.password_reset_token %>
+      <%= render partial: 'shared/submit_button', locals: { :f => f, :text => "Update Password" } %>
+    <% end %>
+<% end %>

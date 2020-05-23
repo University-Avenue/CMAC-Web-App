@@ -1,10 +1,5 @@
 @import "global";
 
-$label-font-color: #999;
-$input-font-color: #555;
-$input-border-color: #d9d9d9;
-$floating-panel-width: 81vw;
-$floating-panel-mobile-width: 87vw;
 $form-input-padding: 0.25rem;
 
 .contact-masthead {
@@ -47,20 +42,6 @@ $form-input-padding: 0.25rem;
       background-repeat: no-repeat;
 
       .floating-panel {
-        padding: 3vw;
-        display: flex;
-        width: $floating-panel-width;
-        justify-content: space-between;
-        background: $background-color;
-        flex-wrap: wrap;
-        border-radius: 10px;
-        box-shadow: 10px 10px 55px 0 rgba(0,0,0,0.75);
-
-        .heading {
-          flex-basis: 100%;
-          text-align: center;
-          padding: 1rem;
-        }
         .map-container {
           flex-basis: 50vw;
           display: inline-block;
@@ -124,10 +105,6 @@ $form-input-padding: 0.25rem;
             margin-left: 0;
           }
         }
-
-        @include media-breakpoint-down(md) {
-          width: $floating-panel-mobile-width;
-        }
       }
 
       @include media-breakpoint-down(md) {
@@ -144,7 +121,7 @@ $form-input-padding: 0.25rem;
 }
 
 .contact-form {
-  padding-top: 2rem;
+  padding: 2rem 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -153,38 +130,6 @@ $form-input-padding: 0.25rem;
 
   form {
     width: 100%;
-
-    label {
-      font-weight: lighter;
-      color: $label-font-color;
-      line-height: 1.5;
-      padding-left: $form-input-padding;
-      font-size: 15px;
-      margin-top: 2rem
-    }
-
-    input {
-      width: 100%;
-      outline: 0;
-      height: 2rem;
-      line-height: 1.2;
-      padding-bottom: 0.5rem;
-      padding-left: $form-input-padding;
-      border-width: 0 0 1px;
-      border-color: $input-border-color;
-      color: $input-font-color;
-      font-size: 18px;
-    }
-
-    textarea {
-      width: 100%;
-      border-width: 0 0 1px;
-      border-color: $input-border-color;
-      color: $input-font-color;
-      padding-left: $form-input-padding;
-      font-size: 18px;
-      height: 10rem;
-    }
 
     .form-button {
       display: block;

@@ -50,5 +50,14 @@ ActiveRecord::Schema.define(version: 2020_05_11_005048) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "users", id: :string, force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.string "password_reset_token"
+    t.datetime "password_reset_sent_at", precision: 6
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
 end

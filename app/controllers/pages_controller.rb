@@ -14,4 +14,7 @@ class PagesController < ApplicationController
 
   def train
   end
+
+  def login
+  end
 end

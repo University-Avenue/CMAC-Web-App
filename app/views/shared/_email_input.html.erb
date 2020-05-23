@@ -1,0 +1,10 @@
+<!--locals: { :f => f }-->
+
+<%= f.label :email %>
+<div class="input-wrapper">
+  <%= f.email_field :email,
+                    required: true,
+                    placeholder: "Enter your email address",
+                    class: "input-text"%>
+  <span class="focus-input" />
+</div>
