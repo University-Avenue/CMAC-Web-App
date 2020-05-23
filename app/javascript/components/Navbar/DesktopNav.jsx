@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import CMACLogo2 from '../../../assets/images/CMAC-logo-2.png';
-import useLoginStatus from '../../hooks/useLoginStatus';
 import LogoutNavItem from './LogoutNavItem';
 import LoginNavItem from './LoginNavItem';
 
-function DesktopNav() {
+export default function DesktopNav({ isLoggedIn }) {
   const [scrolled, setScrolled] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const isHomePage = window.location.pathname === '/' ? 'navbar-home-page' : '';
 
   const listenToScroll = () => {
@@ -24,7 +23,6 @@ function DesktopNav() {
     if (isHomePage) {
       window.addEventListener('scroll', listenToScroll);
     }
-    useLoginStatus(setIsLoggedIn);
     return () => window.removeEventListener('scroll', listenToScroll);
   }, []);
 
@@ -54,10 +52,12 @@ function DesktopNav() {
         <li className="nav-item">
           <a className="nav-link" href="/contact_us">Contact us</a>
         </li>
-        {isLoggedIn ? <LogoutNavItem /> : <LoginNavItem />}
+        {isLoggedIn ? <LogoutNavItem mobileNav={false} /> : <LoginNavItem mobileNav={false} />}
       </ul>
     </nav>
   );
 }
 
-export default DesktopNav;
+DesktopNav.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired,
+};
