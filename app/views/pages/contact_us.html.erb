@@ -9,20 +9,26 @@
   <div class="contact-form">
     <h2 class="form-title">Have any questions?</h2>
     <%= form_with model: @contact do |f| %>
-      <%= f.label :name%><br>
-      <%= f.text_field :name, required: true, placeholder: "Enter your name"%><br>
 
-      <%= f.label :email %><br>
-      <%= f.email_field :email, required: true, placeholder: "Enter your email address"%><br>
+      <%= f.label :name%><br>
+      <div class="input-wrapper">
+        <%= f.text_field :name, required: true, placeholder: "Enter your name", class: "input-text"%>
+        <span class="focus-input" />
+      </div>
+
+      <%= render partial: 'shared/email_input', locals: { :f => f} %>
 
       <%= f.label :message %><br>
-      <%= f.text_area :message, as: :text, placeholder: "Your message here..."%><br>
+      <div class="textarea-wrapper">
+        <%= f.text_area :message, as: :text, placeholder: "Your message here..."%>
+        <span class="focus-textarea" />
+      </div>
 
       <div class="hidden">
         <%= f.label :nickname %><br>
         <%= f.text_field :nickname, hint: 'leave this field blank'%>
       </div>
-      <%= f.submit 'Send Message', class: "form-button" %>
+      <%= render partial: 'shared/submit_button', locals: { :f => f, :text => "Send Message" } %>
     <% end %>
   </div>
 </div>

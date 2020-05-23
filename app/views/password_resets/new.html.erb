@@ -1,0 +1,7 @@
+<%= render :layout => 'shared/form', locals: { :heading => "Password Reset"} do %>
+    <%= form_with :url => password_resets_path,  :method => :post, :class => "forgot-pass-form" do |f|%>
+      <%= render partial: 'shared/email_input', locals: { :f => f} %>
+      <%= render partial: 'shared/submit_button', locals: { :f => f, :text => "Reset Password" } %>
+    <% end %>
+    </div>
+<% end %>
