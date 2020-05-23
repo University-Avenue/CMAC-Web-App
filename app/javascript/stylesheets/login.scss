@@ -147,5 +147,9 @@ $login-form-color: #f7f7f7;
       width: inherit;
       height: inherit;
     }
+
+    @include media-breakpoint-down(md) {
+      width: $floating-panel-mobile-width;
+    }
   }
 }

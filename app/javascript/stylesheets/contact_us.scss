@@ -1,7 +1,5 @@
 @import "global";
 
-$floating-panel-width: 81vw;
-$floating-panel-mobile-width: 87vw;
 $form-input-padding: 0.25rem;
 
 .contact-masthead {
@@ -106,10 +104,6 @@ $form-input-padding: 0.25rem;
             flex-basis: auto;
             margin-left: 0;
           }
-        }
-
-        @include media-breakpoint-down(md) {
-          width: $floating-panel-mobile-width;
         }
       }
 
