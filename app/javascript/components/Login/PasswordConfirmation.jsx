@@ -7,7 +7,7 @@ export default function PasswordConfirmationInput({ passwordConfirmation, onChan
       <input
         className="input-text"
         type="password"
-        name="password_confirmation"
+        name="passwordConfirmation"
         placeholder="Password confirmation"
         value={passwordConfirmation}
         onChange={onChangeHandler}

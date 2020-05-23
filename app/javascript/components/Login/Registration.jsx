@@ -8,7 +8,7 @@ export default function Registration() {
   const [credentials, setCredentials] = useState({
     email: '',
     password: '',
-    password_confirmation: '',
+    passwordConfirmation: '',
   });
 
   const handleSubmit = (event) => {
@@ -48,7 +48,7 @@ export default function Registration() {
         <PasswordInput password={credentials.password} onChangeHandler={handleChange} />
         <PasswordConfirmationInput
           onChangeHandler={handleChange}
-          passwordConfirmation={credentials.password_confirmation}
+          passwordConfirmation={credentials.passwordConfirmation}
         />
         <button type="submit">Register</button>
       </form>
