@@ -1,3 +1,7 @@
+@import "global";
+
+$font-size: 1.2rem;
+
 .mobile-container {
   width: inherit;
   height: 100%;
@@ -8,30 +12,65 @@
   display: flex;
   justify-content: space-between;
 
-  li {
+  .link-container {
     display: flex;
-    flex: 1;
+    flex: 1 1;
     vertical-align: middle;
     justify-content: center;
   }
 
-  a {
-    width: 100%;
+  .mobile-nav-link {
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #dc3545;
-    font-size: 4vw;
+    color: $primary-color;
+    font-size: $font-size;
+
     &:hover, &:focus {
-      color: #dc3545;
+      color: $primary-color;
       text-decoration: none;
+    }
+
+    .nav-logo {
+      width: 60%;
+      height: auto;
     }
   }
 
-  .nav-logo {
-    height: 50%;
-    width: auto;
+  .nav-item {
+    flex: 2 2;
+
+    &.login {
+      flex: 1 1;
+    }
+
+    .logout-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      & * {
+        padding: 0;
+      }
+
+      .logout-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        flex: 1 1 auto;
+        background: none;
+        color: $primary-color;
+        font-size: 1.2rem;
+
+        &:hover, &:focus {
+          text-decoration: none;
+          color: $primary-color;
+        }
+      }
+    }
   }
 }
 

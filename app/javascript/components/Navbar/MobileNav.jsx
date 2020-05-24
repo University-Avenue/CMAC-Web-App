@@ -1,36 +1,37 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import logo from '../../../assets/images/CMAC-logo-2.png';
+import LogoutNavItem from './LogoutNavItem';
+import LoginNavItem from './LoginNavItem';
 
-function MobileNav() {
+export default function MobileNav({ isLoggedIn }) {
   return (
     <ul className="mobile-container">
-      <li>
-        <a href="/">
+      <li className="link-container">
+        <a className="mobile-nav-link" href="/">
           <img src={logo} alt="cmac-logo" className="nav-logo" />
         </a>
       </li>
-      <li>
-        <a href="/train">
+      <li className="link-container">
+        <a className="mobile-nav-link" href="/train">
           <i className="fas fa-heartbeat" />
         </a>
       </li>
-      <li>
-        <a href="/schedule">
+      <li className="link-container">
+        <a className="mobile-nav-link" href="/schedule">
           <i className="fas fa-calendar-day" />
         </a>
       </li>
-      <li>
-        <a href="/contact_us">
+      <li className="link-container">
+        <a className="mobile-nav-link" href="/contact_us">
           <i className="fas fa-envelope" />
         </a>
       </li>
-      <li>
-        <a href="/profile">
-          <i className="fas fa-user-circle" />
-        </a>
-      </li>
+      {isLoggedIn ? <LogoutNavItem mobileNav /> : <LoginNavItem mobileNav />}
     </ul>
   );
 }
 
-export default MobileNav;
+MobileNav.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired,
+};
