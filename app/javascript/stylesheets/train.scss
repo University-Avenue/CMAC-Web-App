@@ -63,9 +63,14 @@ $course-sub-heading-color: #A3A5A9;
         flex: 1 1;
         height: 100%;
 
-        &:hover {
-          cursor: pointer;
-          color: $primary-color;
+        a {
+          text-decoration: none;
+          color: $nav-text-dark-color;
+
+          &:hover {
+            cursor: pointer;
+            color: $primary-color;
+          }
         }
       }
     }

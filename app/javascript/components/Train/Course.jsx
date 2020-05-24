@@ -26,7 +26,9 @@ export default function Course({ name, isLoggedIn, image }) {
       <div className="course-description">
         <p className="lesson-count">{`${name.length * 2} Lessons`}</p>
         <div className="course-title">
-          <h4>{name}</h4>
+          <a href={`${isLoggedIn ? { name } : '/login'}`}>
+            <h4>{name}</h4>
+          </a>
         </div>
       </div>
     </div>
