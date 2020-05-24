@@ -8,7 +8,6 @@ export default function Schedule() {
     <>
       <div className="page-header-container">
         <h1>Schedule</h1>
-
       </div>
       <div className="calendar-container">
         <FullCalendar

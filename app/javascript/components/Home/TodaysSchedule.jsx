@@ -18,6 +18,7 @@ export default function TodaysScheduleSection() {
             events={events}
             minTime="11:00:00"
             maxTime="22:00:00"
+            contentHeight="auto"
             eventTextColor="white"
             eventTimeFormat={
             {
