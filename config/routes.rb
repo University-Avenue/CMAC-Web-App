@@ -1,17 +1,26 @@
 Rails.application.routes.draw do
+  resources :events
+
   resources :sessions, only: [:create]
+
   delete :logout, to: "sessions#logout"
+
   get :logged_in, to: "sessions#logged_in"
+
   post 'login_user' => "sessions#create"
 
   resources :registrations, only: [:create]
+
   resources :contacts, only:[:new, :create], :path => 'contact_us'
+
   resource  :password_resets, only:[:new, :create, :edit, :update]
+
   get 'password_reset' =>'password_resets#new'
 
   resources :gallery_items do
     get '(page/:page)', action: :index, on: :collection, as: ''
   end
+  
   post 'gallery_items/upload', to: 'gallery_items#upload'
   get 'image_gallery/index'
   get 'image_gallery/show'

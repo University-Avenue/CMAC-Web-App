@@ -12,11 +12,12 @@
  */
 
 @import "bootstrap";
+@import "global";
 @import "home";
 @import "contact_us";
 @import "navbar";
-@import "global";
 @import "image_gallery";
+@import "schedule";
 @import "login";
 @import "@fullcalendar/core/main.css";
 @import "@fullcalendar/daygrid/main.css";
