@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="page-header-container">
+    <h1>Gallery Items</h1>
+  </div>
+
+  <div id="image-gallery-dropzone"></div>
+  <%= javascript_pack_tag 'pages/image_gallery' %>
+
+  <div class="image-gallery-content-container">
+    <ul class="image-gallery">
+      <% @gallery_items.each do |gallery_item| %>
+        <li class="image-gallery-item">
+          <%= image_tag(gallery_item.image) %>
+          <%= link_to '<i class="fas fa-trash"></i>'.html_safe, gallery_item, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="pagination-container">
+    <%= paginate @gallery_items, :class => "Page navigation" %>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div id="contact-us">
+  <% flash.each do |key, value| %>
+    <div class="<%= flash_class(key) %> alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <%= value %>
+    </div>
+  <% end %>
+  <div id="contact-us-info"></div>
+  <div class="contact-form">
+    <h2 class="form-title">Have any questions?</h2>
+    <%= form_with model: @contact do |f| %>
+
+      <%= f.label :name%><br>
+      <div class="input-wrapper">
+        <%= f.text_field :name, required: true, placeholder: "Enter your name", class: "input-text"%>
+        <span class="focus-input" />
+      </div>
+
+      <%= render partial: 'shared/email_input', locals: { :f => f} %>
+
+      <%= f.label :message %><br>
+      <div class="textarea-wrapper">
+        <%= f.text_area :message, as: :text, placeholder: "Your message here..."%>
+        <span class="focus-textarea" />
+      </div>
+
+      <div class="hidden">
+        <%= f.label :nickname %><br>
+        <%= f.text_field :nickname, hint: 'leave this field blank'%>
+      </div>
+      <%= render partial: 'shared/submit_button', locals: { :f => f, :text => "Send Message" } %>
+    <% end %>
+  </div>
+</div>
+<%= javascript_pack_tag 'contact_us/index' %>
+

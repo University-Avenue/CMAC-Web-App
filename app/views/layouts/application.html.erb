@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CMACKWWebApplication</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CMAC KW</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/010d12112b.js" crossorigin="anonymous"></script>
+    <%= favicon_link_tag asset_path('CMAC-logo-2.png') %>
   </head>
 
-  <body>
-    <header id="page-header"></header>
-    <%= javascript_pack_tag 'header/index' %>
-    <nav id="nav-menu"></nav>
-    <%= javascript_pack_tag 'navMenu/index' %>
-    <main id="page-content" class="container"></main> 
+  <body data-turbolinks="false">
+    <header id="page-header">
+    </header>
     <%= javascript_pack_tag 'index' %>
-    <%= yield %>
+
+    <main id="page-content">
+      <%= yield %>
+    </main>
+
+    <footer id="page-footer">
+    </footer>
   </body>
 </html>

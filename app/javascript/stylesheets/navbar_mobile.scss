@@ -1,0 +1,76 @@
+@import "global";
+
+$font-size: 1.2rem;
+
+.mobile-container {
+  width: inherit;
+  height: 100%;
+  background-color: $mobile-nav-color;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+
+  .link-container {
+    display: flex;
+    flex: 1 1;
+    vertical-align: middle;
+    justify-content: center;
+  }
+
+  .mobile-nav-link {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: $primary-color;
+    font-size: $font-size;
+
+    &:hover, &:focus {
+      color: $primary-color;
+      text-decoration: none;
+    }
+
+    .nav-logo {
+      width: 60%;
+      height: auto;
+    }
+  }
+
+  .nav-item {
+    flex: 2 2;
+
+    &.login {
+      flex: 1 1;
+    }
+
+    .logout-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      & * {
+        padding: 0;
+      }
+
+      .logout-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        flex: 1 1 auto;
+        background: none;
+        color: $primary-color;
+        font-size: 1.2rem;
+
+        &:hover, &:focus {
+          text-decoration: none;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+

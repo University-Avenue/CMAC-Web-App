@@ -1,0 +1,136 @@
+@import "navbar_mobile";
+
+$font-weight: 700;
+$font-size: 0.9rem;
+
+nav {
+  height: inherit;
+  width: inherit;
+  box-sizing: border-box;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: $primary-gradient;
+  height: inherit;
+  transition: background-color 0.2s ease;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+    font-weight: $font-weight;
+    font-kerning: normal;
+    color: $nav-text-light-color;
+    &:hover, &:focus {
+      text-decoration: none;
+      color: $nav-text-light-hover-color;
+    }
+  }
+
+  .navbar-logo {
+    margin: 0 0.5rem;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+
+    .nav-link {
+      display: block;
+      padding: 0 1rem;
+      color: $nav-text-light-color;
+      font-weight: $font-weight;
+      font-kerning: normal;
+      font-size: $font-size;
+
+      &:hover, &:focus {
+        text-decoration: none;
+        color: $nav-text-dark-color;
+      }
+
+      &:active {
+        color: $nav-text-light-color;
+      }
+
+      &.disabled{
+        color: $nav-disabled-color;
+        pointer-events: none;
+        cursor: default;
+      }
+    }
+
+    .logout-container {
+      display: flex;
+    }
+
+    .logout-button {
+      border: none;
+      background: none;
+      color: $nav-text-light-color;
+      font-weight: $font-weight;
+      font-size: $font-size;
+
+      &:hover, &:focus {
+        text-decoration: none;
+        color: $nav-text-dark-color;
+      }
+    }
+  }
+
+  &.navbar-expand-lg {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
+
+  &.navbar-scrolled{
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    background: $nav-color;
+    .navbar-brand {
+      color: $nav-text-dark-color;
+    }
+
+    .navbar-brand:hover {
+      color: $nav-text-dark-hover-color;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+      color: $nav-text-dark-color;
+    }
+
+    .navbar-nav .nav-item .nav-link:hover {
+      color: $nav-text-dark-hover-color;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    display: none;
+  }
+}
