@@ -103,6 +103,16 @@ $form-input-padding: 0.25rem;
               flex-basis: 33%;
               text-align: right;
             }
+
+            @include media-breakpoint-down(lg) {
+              .hours-date {
+                flex-basis: 50%;
+              }
+
+              .hours-time {
+                flex-basis: 50%;
+              }
+            }
           }
           @include media-breakpoint-down(md) {
             flex-basis: auto;
