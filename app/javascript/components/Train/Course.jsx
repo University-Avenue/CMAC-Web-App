@@ -1,13 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Course({ name, isLoggedIn }) {
+export default function Course({ name, isLoggedIn, image }) {
   const isCourseLocked = isLoggedIn ? '' : 'locked';
+  const style = {
+    backgroundImage: `url(${image})`,
+  };
 
   return (
     <div className="course">
-      <div className={`course-photo ${isCourseLocked}`}>
-        <img src={require(`../../../assets/images/${name.toLowerCase()}.png`)} alt={name} id={name.toLowerCase()}/>
+      <div
+        className={`course-photo ${isCourseLocked}`}
+        id={name.toLowerCase()}
+        style={style}
+      >
       </div>
       <div className="course-description">
         <p className="lesson-count">{`${name.length * 2} Lessons`}</p>
@@ -22,4 +28,5 @@ export default function Course({ name, isLoggedIn }) {
 Course.propTypes = {
   name: PropTypes.string.isRequired,
   isLoggedIn: PropTypes.bool.isRequired,
+  image: PropTypes.object.isRequired,
 };
