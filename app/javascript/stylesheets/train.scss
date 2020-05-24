@@ -1,6 +1,9 @@
 @import "global";
 
 $course-side-length: 30vw;
+$course-title-color: #fafbfd;
+$course-border-color: #E7E9EC;
+$course-sub-heading-color: #A3A5A9;
 
 .train-page {
   width: 100%;
@@ -31,7 +34,7 @@ $course-side-length: 30vw;
       min-width: 275px;
       display: flex;
       flex-direction: column;
-      border: 1px solid #E7E9EC;
+      border: 1px solid $course-border-color;
       border-radius: 4px;
       transition: .2s box-shadow;
       margin: 0.5rem;
@@ -45,29 +48,34 @@ $course-side-length: 30vw;
         background-size: cover;
         object-fit: cover;
 
-        &#weapons {
-          object-position: 0 20%;
+        .locked-layer {
+          height: 100%;
+          font-size: 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          background-color: rgba(45, 36, 36, 0.67);
         }
 
-        &.locked {
-          //background-image: $primary-gradient;
+        &#weapons {
+          object-position: 0 20%;
         }
       }
 
       .course-description {
-        background-color: #fafbfd;
+        background-color: $course-title-color;
         padding: 0.5rem;
 
         .lesson-count {
           margin: 0;
-          color: #A3A5A9;
+          color: $course-sub-heading-color;
           font-weight: 300;
         }
 
         .course-title {
           flex: 1 1;
           height: 100%;
-          font-weight: 600;
 
           &:hover {
             cursor: pointer;
