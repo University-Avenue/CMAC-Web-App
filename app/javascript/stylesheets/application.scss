@@ -19,6 +19,7 @@
 @import "image_gallery";
 @import "schedule";
 @import "login";
+@import "train";
 @import "@fullcalendar/core/main.css";
 @import "@fullcalendar/daygrid/main.css";
 @import "@fullcalendar/timegrid/main.css";
@@ -32,6 +33,12 @@ body {
   box-sizing: border-box;
   padding-top: $header-height;
   margin: 0px;
+}
+
+a {
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 // Forms

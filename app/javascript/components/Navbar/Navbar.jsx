@@ -5,10 +5,10 @@ import useWindowDimensions from '../../hooks/useWindowDimensions';
 import useLoginStatus from '../../hooks/useLoginStatus';
 
 function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const window = useWindowDimensions();
   const xsWindowWidth = 576;
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => { useLoginStatus(setIsLoggedIn); }, []);
 
   if (window.width > xsWindowWidth) {
