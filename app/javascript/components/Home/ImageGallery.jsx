@@ -57,7 +57,7 @@ export default function ImageGallerySection() {
   ));
 
   return (
-    <section id="image-gallery">
+    <section id="image-gallery" className="mb-3">
       <div className="home-page-section-title-container">
         <h3>Image Gallery</h3>
       </div>

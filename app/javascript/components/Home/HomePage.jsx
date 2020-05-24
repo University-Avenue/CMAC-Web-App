@@ -7,7 +7,6 @@ import OurInstructorsSections from './OurInstructors';
 import TodaysScheduleSection from './TodaysSchedule';
 import ImageGallerySection from './ImageGallery';
 import DotNavigator from './DotNavigator';
-import Footer from './Footer';
 
 export default function HomePage() {
   const [visibleSection, setVisibleSection] = useState('ourStory');
@@ -25,7 +24,6 @@ export default function HomePage() {
       <OurInstructorsSections />
       <TodaysScheduleSection />
       <ImageGallerySection />
-      <Footer />
     </>
   );
 }
