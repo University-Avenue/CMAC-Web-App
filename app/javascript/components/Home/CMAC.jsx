@@ -17,7 +17,8 @@ export default function CMACSection() {
           <p>
             Our centre is a proud member of
             {' '}
-            <a href="http://www.cmac1.com/">Classical Martial Arts Canada(CMAC). </a>
+            <a className="cmac-link" href="http://www.cmac1.com/">Classical Martial Arts Canada(CMAC)</a>
+            .
             CMAC was created to assist affiliated
             professional and semi-professional Martial Arts Schools. As a governing body
             for grading black belts and ensuring the levels of knowledge and proficiency
