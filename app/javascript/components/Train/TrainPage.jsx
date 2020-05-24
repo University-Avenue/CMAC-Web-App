@@ -3,11 +3,11 @@ import CourseGrid from './CourseGrid';
 
 export default function TrainPage() {
   return (
-    <div className="train-page">
-      <div className="heading-container">
+    <>
+      <div className="page-header-container">
         <h1>Training Center</h1>
       </div>
       <CourseGrid />
-    </div>
+    </>
   );
 }

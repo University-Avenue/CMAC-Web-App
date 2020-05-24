@@ -5,88 +5,73 @@ $course-title-color: #fafbfd;
 $course-border-color: #E7E9EC;
 $course-sub-heading-color: #A3A5A9;
 
-.train-page {
-  width: 100%;
-  height: 100%;
-  margin-top: $header-height;
+.course-grid {
+  margin: 2rem 0;
+  max-width: 1250px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
 
-  .heading-container {
+  .course {
+    max-height: $course-side-length;
+    min-height: 275px;
+    max-width: 400px;
+    min-width: 275px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    flex-direction: column;
+    border: 1px solid $course-border-color;
+    border-radius: 4px;
+    transition: .2s box-shadow;
+    margin: 0.5rem;
+    overflow: hidden;
 
-  .course-grid {
-    margin: 2rem 0;
-    max-width: 1250px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-
-    .course {
-      max-height: $course-side-length;
-      min-height: 275px;
-      max-width: 400px;
-      min-width: 275px;
-      display: flex;
-      flex-direction: column;
-      border: 1px solid $course-border-color;
-      border-radius: 4px;
-      transition: .2s box-shadow;
-      margin: 0.5rem;
+    .course-photo {
+      width: 100%;
+      height: 200px;
+      flex: 1 1;
       overflow: hidden;
+      background-size: cover;
+      object-fit: cover;
 
-      .course-photo {
-        width: 100%;
-        height: 200px;
+      .locked-layer {
+        height: 100%;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        background-color: rgba(45, 36, 36, 0.67);
+      }
+
+      &#weapons {
+        object-position: 0 20%;
+      }
+    }
+
+    .course-description {
+      background-color: $course-title-color;
+      padding: 0.5rem;
+
+      .lesson-count {
+        margin: 0;
+        color: $course-sub-heading-color;
+        font-weight: 300;
+      }
+
+      .course-title {
         flex: 1 1;
-        overflow: hidden;
-        background-size: cover;
-        object-fit: cover;
+        height: 100%;
 
-        .locked-layer {
-          height: 100%;
-          font-size: 2rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: white;
-          background-color: rgba(45, 36, 36, 0.67);
-        }
-
-        &#weapons {
-          object-position: 0 20%;
+        &:hover {
+          cursor: pointer;
+          color: $primary-color;
         }
       }
+    }
 
-      .course-description {
-        background-color: $course-title-color;
-        padding: 0.5rem;
-
-        .lesson-count {
-          margin: 0;
-          color: $course-sub-heading-color;
-          font-weight: 300;
-        }
-
-        .course-title {
-          flex: 1 1;
-          height: 100%;
-
-          &:hover {
-            cursor: pointer;
-            color: $primary-color;
-          }
-        }
-      }
-
-      &:hover {
-        box-shadow: 0 4px 32px 0 rgba(18,43,70,.1);
-      }
+    &:hover {
+      box-shadow: 0 4px 32px 0 rgba(18,43,70,.1);
     }
   }
 }
