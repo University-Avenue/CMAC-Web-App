@@ -138,14 +138,23 @@ $login-form-color: #f7f7f7;
     width: 50vw;
 
     .heading {
-      margin: 0;
+      padding: 0.5rem;
     }
 
     .forgot-pass-form {
       display: flex;
       flex-direction: column;
-      width: inherit;
-      height: inherit;
+      width: 100%;
+      height: 100%;
+
+      .cmac-button {
+        width: 50%;
+        margin: 0 auto;
+
+        @include media-breakpoint-down(sm) {
+          width: 100%;
+        }
+      }
     }
 
     @include media-breakpoint-down(md) {

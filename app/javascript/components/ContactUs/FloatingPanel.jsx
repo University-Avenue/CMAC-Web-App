@@ -1,5 +1,6 @@
 import React from 'react';
 import ContactDetails from './ContactDetails';
+// eslint-disable-next-line import/no-named-as-default
 import MapContainer from './MapContainer';
 
 export default function FloatingPanel() {
@@ -8,9 +9,7 @@ export default function FloatingPanel() {
       <div className="heading">
         <h1> Contact Us </h1>
       </div>
-      <div className="map-container">
-        <MapContainer />
-      </div>
+      <MapContainer />
       <ContactDetails />
     </div>
   );

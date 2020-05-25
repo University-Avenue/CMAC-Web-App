@@ -1,5 +1,6 @@
 import React from 'react';
 import CourseGrid from './CourseGrid';
+import MapContainer from '../ContactUs/MapContainer';
 
 export default function TrainPage() {
   return (
@@ -8,6 +9,7 @@ export default function TrainPage() {
         <h1>Training Center</h1>
       </div>
       <CourseGrid />
+      <MapContainer />
     </>
   );
 }
