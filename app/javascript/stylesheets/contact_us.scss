@@ -44,24 +44,15 @@ $form-input-padding: 0.25rem;
       background-repeat: no-repeat;
 
       .floating-panel {
-        .map-container {
-          min-height: 350px;
-          flex-basis: 50vw;
-          display: inline-block;
-
-          div {
+          .google-map {
             position: relative !important;
+            height: 300px !important;
+            width: $floating-panel-width !important;
+            max-width: $floating-panel-max-width;
           }
-
-          @include media-breakpoint-down(md) {
-            flex-basis: $floating-panel-width;
-          }
-        }
 
         .contact-us-details {
-          flex-basis: 21vw;
-          text-align: left;
-          margin-left: 1rem;
+          width: 100%;
 
           #details-list {
             padding: 0;
