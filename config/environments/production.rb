@@ -89,6 +89,23 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  # Action Mailer configurations
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: 'http://159.203.28.56/' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+
+  ActionMailer::Base.smtp_settings = {
+      :user_name => ENV['SENDGRID_USERNAME'],
+      :password => ENV['SENDGRID_PASSWORD'],
+      :domain => 'http://159.203.28.56/',
+      :address => 'smtp.sendgrid.net',
+      :port => 465,
+      :authentication => :plain,
+      :enable_starttls_auto => true,
+      :tls => true
+  }
+
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
   # middleware. The `delay` is used to determine how long to wait after a write
